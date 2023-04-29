@@ -64,7 +64,7 @@ public class FollowCursor : MonoBehaviour
             }
             yield return new WaitForSeconds(_separationDuration);
         }
-        BringToLayer(3);
+        BringToLayer(5);
     }
 
     public void BringToLayer(int layer)
