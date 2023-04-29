@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "Qualities/ShapeQuality")]
+[CreateAssetMenu(menuName = "Qualities/Shape")]
 public class ShapeQuality : Quality
 {
     [SerializeField] private Sprite _shapeSprite;

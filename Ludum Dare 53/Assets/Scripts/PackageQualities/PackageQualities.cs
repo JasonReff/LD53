@@ -26,6 +26,7 @@ public class PackageQualities : MonoBehaviour
         _qualities.Shape.ShowQuality(this);
         _qualities.Color.ShowQuality(this);
         _qualities.Size.ShowQuality(this);
+        _qualities.Wetness.ShowQuality(this);
         _mask.sprite = _shapeImage.sprite;
         ResetCollider();
         foreach (var quality in _qualities.AdditionalQualities)
@@ -55,13 +56,15 @@ public struct Qualities
     public ShapeQuality Shape;
     public ColorQuality Color;
     public SizeQuality Size;
+    public SlipperyQuality Wetness;
     public List<LayeredQuality> AdditionalQualities;
 
-    public Qualities(ShapeQuality shape, ColorQuality color, SizeQuality size, List<LayeredQuality> additionalQualities)
+    public Qualities(ShapeQuality shape, ColorQuality color, SizeQuality size, SlipperyQuality wetness, List<LayeredQuality> additionalQualities)
     {
         Shape = shape;
         Color = color;
         Size = size;
+        Wetness = wetness;
         AdditionalQualities = additionalQualities;
     }
 
@@ -76,6 +79,8 @@ public struct Qualities
             return false;
         }
         if (qualities1.Size != qualities2.Size)
+            return false;
+        if (qualities1.Wetness != qualities2.Wetness)
             return false;
         foreach (var quality in qualities1.AdditionalQualities)
         {

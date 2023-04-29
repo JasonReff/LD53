@@ -29,6 +29,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 124d462d542b3614dbe58f7d63cc3a03, type: 2}
   - {fileID: 11400000, guid: 0a1e52c43bcb5ca42b74121bf9c016d8, type: 2}
   - {fileID: 11400000, guid: 10ca2af9f2f37704fbdf544690e38ed8, type: 2}
+  _wetnesses:
+  - {fileID: 11400000, guid: 4245e77b33e8bbe44972cf3a3848591d, type: 2}
   _layeredQualities:
   - {fileID: 11400000, guid: 0b67093a3d907834387982b2a70ffa16, type: 2}
   - {fileID: 11400000, guid: 92554bab0e31b094f97e966166bb34d2, type: 2}

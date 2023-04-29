@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e791cd45ef0fca4a9c7551468587f91, type: 3}
-  m_Name: Wet
+  m_Name: Dry
   m_EditorClassIdentifier: 
-  _qualityName: Wet
+  _qualityName: Dry
   _additionalQualityPrefab: {fileID: 7682175617939307345, guid: 67e1827c00526ca48ad2cdb8fa756b9b, type: 3}
-  _qualitySprite: {fileID: 21300000, guid: 586b68f2dd44eb844918c3020bcd3a5e, type: 3}
+  _qualitySprite: {fileID: 0}
   _incompatibleQualities:
   - {fileID: 11400000, guid: acbe64b32d4678040a894de64b5787b5, type: 2}
-  - {fileID: 11400000, guid: 99131f67d1307484cb0104fe7926fbf4, type: 2}
-  _material: {fileID: 6200000, guid: 1d2d906fef137624b9b0493d9b43bc61, type: 2}
+  - {fileID: 11400000, guid: 4245e77b33e8bbe44972cf3a3848591d, type: 2}
+  _material: {fileID: 6200000, guid: 1011efbe2f2214648935ece5c13e92be, type: 2}
