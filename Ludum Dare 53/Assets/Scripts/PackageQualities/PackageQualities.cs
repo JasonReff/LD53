@@ -11,7 +11,7 @@ public class PackageQualities : MonoBehaviour
     [SerializeField] private SpriteRenderer _shapeImage;
     [SerializeField] private QualityPool _pool;
 
-    public Qualities Qualities { get => _qualities; }
+    public Qualities Qualities { get => _qualities; set => _qualities = value; }
     
     public SpriteRenderer ShapeImage { get => _shapeImage; }
 
@@ -58,14 +58,16 @@ public struct Qualities
     public SizeQuality Size;
     public SlipperyQuality Wetness;
     public List<LayeredQuality> AdditionalQualities;
+    public string Barcode;
 
-    public Qualities(ShapeQuality shape, ColorQuality color, SizeQuality size, SlipperyQuality wetness, List<LayeredQuality> additionalQualities)
+    public Qualities(ShapeQuality shape, ColorQuality color, SizeQuality size, SlipperyQuality wetness, List<LayeredQuality> additionalQualities, string barcode)
     {
         Shape = shape;
         Color = color;
         Size = size;
         Wetness = wetness;
         AdditionalQualities = additionalQualities;
+        Barcode = barcode;
     }
 
     public static bool operator == (Qualities qualities1, Qualities qualities2)

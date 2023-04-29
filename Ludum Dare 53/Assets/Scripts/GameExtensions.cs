@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using UnityEngine;
 
 public static class GameExtensions
 {
@@ -44,5 +46,15 @@ public static class GameExtensions
             numberToPull = list.Count;
         List<T> newList = list.OrderBy(t => random.Next()).Take(numberToPull).ToList();
         return newList;
+    }
+
+    public static string RandomNumbers(int numberCount)
+    {
+        var stringBuilder = new StringBuilder();
+        for (int i = 0; i < numberCount; i++)
+        {
+            stringBuilder.Append(Random.Range(0, 10));
+        }
+        return stringBuilder.ToString();
     }
 }

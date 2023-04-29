@@ -5,9 +5,10 @@ using UnityEngine.Rendering.Universal;
 
 public class LightPulse : MonoBehaviour
 {
-    [SerializeField] private Light2D _light;
+    [SerializeField] private SpriteRenderer _light;
     private void Update()
     {
-        _light.intensity = Mathf.Sin(Time.deltaTime);
+        var size = Mathf.Sin(Time.deltaTime);
+        _light.transform.localScale = new Vector2(size, size);
     }
 }

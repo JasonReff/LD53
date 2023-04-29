@@ -50,8 +50,11 @@ public class FollowCursor : MonoBehaviour
         }
         foreach (var collider in colliders)
         {
-            var force = (collider.transform.position - transform.position) * _separationForce;
-            collider.attachedRigidbody.AddForce(force);
+            if (collider.TryGetComponent(out PackageQualities package))
+            {
+                var force = (collider.transform.position - transform.position) * _separationForce;
+                collider.attachedRigidbody.AddForce(force);
+            }
         }
         var filter = new ContactFilter2D();
         filter.layerMask = LayerMask.NameToLayer("Truck3");
