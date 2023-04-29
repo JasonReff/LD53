@@ -534,7 +534,7 @@ GameObject:
   - component: {fileID: 1618377680}
   - component: {fileID: 1618377679}
   - component: {fileID: 1618377678}
-  - component: {fileID: 1618377677}
+  - component: {fileID: 1618377682}
   m_Layer: 0
   m_Name: box
   m_TagString: Untagged
@@ -542,20 +542,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1618377677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1618377676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a7e46052e8993142834f0c778f27944, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectedObject: {fileID: 0}
-  maxSpeed: 10
 --- !u!50 &1618377678
 Rigidbody2D:
   serializedVersion: 4
@@ -670,6 +656,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1618377682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618377676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c147fc3b6f403941bc8fa5ea548285b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rb: {fileID: 1618377678}
+  _minimumDragTime: 0.25
+  _maximumForce: 10
 --- !u!1 &1660559485
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,7 +683,7 @@ GameObject:
   - component: {fileID: 1660559489}
   - component: {fileID: 1660559488}
   - component: {fileID: 1660559487}
-  - component: {fileID: 1660559486}
+  - component: {fileID: 1660559491}
   m_Layer: 0
   m_Name: ball
   m_TagString: Untagged
@@ -690,20 +691,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1660559486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660559485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a7e46052e8993142834f0c778f27944, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectedObject: {fileID: 0}
-  maxSpeed: 10
 --- !u!50 &1660559487
 Rigidbody2D:
   serializedVersion: 4
@@ -808,6 +795,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1660559491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660559485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c147fc3b6f403941bc8fa5ea548285b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rb: {fileID: 1660559487}
+  _minimumDragTime: 0.25
+  _maximumForce: 10
 --- !u!1 &1920284028
 GameObject:
   m_ObjectHideFlags: 0
