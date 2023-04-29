@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -5270359834122086275}
   - component: {fileID: 2735108862399842461}
   - component: {fileID: 6753037235542341732}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,6 +130,7 @@ MonoBehaviour:
   _maxForce: 100
   _collider: {fileID: 2735108862399842461}
   _separationForce: 0
+  _separationDuration: 0.25
 --- !u!257 &1836017248676470474
 TargetJoint2D:
   m_ObjectHideFlags: 0
@@ -333,7 +334,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_SortAtRoot: 0
 --- !u!1 &7105344409009191102
 GameObject:
