@@ -23,8 +23,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fee34bddcf22ae64f86964a9663b940c, type: 2}
   _colors:
   - {fileID: 11400000, guid: faef6740b8273b94ab020b65bce8dbc9, type: 2}
+  - {fileID: 11400000, guid: 754cc3a37f43aad41851c3dab48ba823, type: 2}
+  - {fileID: 11400000, guid: 052c5a927e88d4647b01cfdf05e10e01, type: 2}
   _sizes:
   - {fileID: 11400000, guid: 124d462d542b3614dbe58f7d63cc3a03, type: 2}
   - {fileID: 11400000, guid: 0a1e52c43bcb5ca42b74121bf9c016d8, type: 2}
   - {fileID: 11400000, guid: 10ca2af9f2f37704fbdf544690e38ed8, type: 2}
-  _layeredQualities: []
+  _layeredQualities:
+  - {fileID: 11400000, guid: 0b67093a3d907834387982b2a70ffa16, type: 2}

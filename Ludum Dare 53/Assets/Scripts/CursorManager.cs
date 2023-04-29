@@ -5,6 +5,7 @@ using UnityEngine;
 public class CursorManager : MonoBehaviour
 {
     [SerializeField] private Camera _main;
+    
     private FollowCursor _object;
     private void Update()
     {
@@ -46,4 +47,6 @@ public class CursorManager : MonoBehaviour
         _object.OnUnclick();
         _object = null;
     }
+
+    
 }

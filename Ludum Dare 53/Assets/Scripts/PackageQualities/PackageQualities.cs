@@ -32,6 +32,10 @@ public class PackageQualities : MonoBehaviour
         {
             quality.ShowQuality(this);
         }
+        foreach (var sprite in GetComponentsInChildren<SpriteRenderer>())
+        {
+            sprite.sortingOrder = _shapeImage.sortingOrder + 1;
+        }
     }
 
     private void ResetCollider()
