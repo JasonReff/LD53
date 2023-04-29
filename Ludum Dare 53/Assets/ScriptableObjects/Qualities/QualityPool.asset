@@ -30,7 +30,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0a1e52c43bcb5ca42b74121bf9c016d8, type: 2}
   - {fileID: 11400000, guid: 10ca2af9f2f37704fbdf544690e38ed8, type: 2}
   _wetnesses:
+  - {fileID: 11400000, guid: acbe64b32d4678040a894de64b5787b5, type: 2}
   - {fileID: 11400000, guid: 4245e77b33e8bbe44972cf3a3848591d, type: 2}
+  - {fileID: 11400000, guid: 4245e77b33e8bbe44972cf3a3848591d, type: 2}
+  - {fileID: 11400000, guid: 99131f67d1307484cb0104fe7926fbf4, type: 2}
+  - {fileID: 11400000, guid: 99131f67d1307484cb0104fe7926fbf4, type: 2}
+  - {fileID: 11400000, guid: 99131f67d1307484cb0104fe7926fbf4, type: 2}
   _layeredQualities:
   - {fileID: 11400000, guid: 0b67093a3d907834387982b2a70ffa16, type: 2}
   - {fileID: 11400000, guid: 92554bab0e31b094f97e966166bb34d2, type: 2}
+  - {fileID: 11400000, guid: f68aaef47d8ec084ab2517b606470e44, type: 2}
+  - {fileID: 11400000, guid: f558a8f1f99b9864b95fbf84febf468f, type: 2}

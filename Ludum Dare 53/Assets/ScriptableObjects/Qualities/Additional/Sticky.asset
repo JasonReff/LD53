@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Sticky
   m_EditorClassIdentifier: 
   _qualityName: Sticky
-  _additionalQualityPrefab: {fileID: 7682175617939307345, guid: 67e1827c00526ca48ad2cdb8fa756b9b, type: 3}
+  _additionalQualityPrefab: {fileID: 3229034101391674284, guid: 67e1827c00526ca48ad2cdb8fa756b9b, type: 3}
   _qualitySprite: {fileID: 21300000, guid: 3ac9d6feb61acdb48b9ea7c2901d9b14, type: 3}
+  _incompatibleQualities: []
