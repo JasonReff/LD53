@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class FollowCursor : MonoBehaviour
 {
@@ -21,13 +22,7 @@ public class FollowCursor : MonoBehaviour
 
     private void BringToFront()
     {
-        int _layer = LayerMask.NameToLayer("Truck3");
-        gameObject.layer = _layer;
-        GetComponent<SpriteRenderer>().sortingOrder = 3;
-        foreach (var sprite in GetComponentsInChildren<SpriteRenderer>())
-        {
-            sprite.sortingOrder = 4;
-        }
+        BringToLayer(3);
         StartCoroutine(SeparateObjectsCoroutine());
     }
 
@@ -41,17 +36,14 @@ public class FollowCursor : MonoBehaviour
     {
         _targetJoint2D.enabled = false;
         _rigidbody.AddForce(Vector2.ClampMagnitude(_velocity, _maxForce));
-        var _layer = LayerMask.NameToLayer("Truck3");
-        gameObject.layer = _layer;
+        BringToLayer(3);
     }
 
     private IEnumerator SeparateObjectsCoroutine()
     {
         var colliders = new List<Collider2D>();
         _collider.GetContacts(colliders);
-        int _layer = LayerMask.NameToLayer("Truck4");
-        gameObject.layer = _layer;
-        GetComponent<SpriteRenderer>().sortingOrder = 5;
+        BringToLayer(4);
         foreach (var sprite in GetComponentsInChildren<SpriteRenderer>())
         {
             sprite.sortingOrder = 6;
@@ -62,7 +54,7 @@ public class FollowCursor : MonoBehaviour
             collider.attachedRigidbody.AddForce(force);
         }
         var filter = new ContactFilter2D();
-        filter.layerMask = _layer;
+        filter.layerMask = LayerMask.NameToLayer("Truck3");
         while (_collider.OverlapCollider(filter,colliders) > 0)
         {
             foreach (var collider in colliders)
@@ -72,12 +64,14 @@ public class FollowCursor : MonoBehaviour
             }
             yield return new WaitForSeconds(_separationDuration);
         }
-        _layer = LayerMask.NameToLayer("Truck3");
+        BringToLayer(3);
+    }
+
+    public void BringToLayer(int layer)
+    {
+        var _layer = LayerMask.NameToLayer($"Truck{layer}");
         gameObject.layer = _layer;
-        GetComponent<SpriteRenderer>().sortingOrder = 3;
-        foreach (var sprite in GetComponentsInChildren<SpriteRenderer>())
-        {
-            sprite.sortingOrder = 4;
-        }
+        GetComponent<SortingGroup>().sortingOrder = layer;
+        transform.SetAsLastSibling();
     }
 }
