@@ -7,6 +7,7 @@ public class PackageQualities : MonoBehaviour
 {
     [SerializeField] private Qualities _qualities;
     [SerializeField] private PolygonCollider2D _collider;
+    [SerializeField] private SpriteMask _mask;
     [SerializeField] private SpriteRenderer _shapeImage;
     [SerializeField] private QualityPool _pool;
 
@@ -25,6 +26,7 @@ public class PackageQualities : MonoBehaviour
         _qualities.Shape.ShowQuality(this);
         _qualities.Color.ShowQuality(this);
         _qualities.Size.ShowQuality(this);
+        _mask.sprite = _shapeImage.sprite;
         ResetCollider();
         foreach (var quality in _qualities.AdditionalQualities)
         {
