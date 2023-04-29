@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4346778366069284844}
   - component: {fileID: -5270359834122086275}
   - component: {fileID: 2735108862399842461}
+  - component: {fileID: 6753037235542341732}
   m_Layer: 0
   m_Name: box
   m_TagString: Untagged
@@ -108,7 +109,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -127,6 +128,8 @@ MonoBehaviour:
   _targetJoint2D: {fileID: 1836017248676470474}
   _rigidbody: {fileID: 1836017248676470481}
   _maxForce: 100
+  _collider: {fileID: 2735108862399842461}
+  _separationForce: 0
 --- !u!257 &1836017248676470474
 TargetJoint2D:
   m_ObjectHideFlags: 0
@@ -320,6 +323,18 @@ PolygonCollider2D:
       - {x: 0.3, y: -1.4933333}
       - {x: 0.30333334, y: -1.49}
   m_UseDelaunayMesh: 0
+--- !u!210 &6753037235542341732
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836017248676470483}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &7105344409009191102
 GameObject:
   m_ObjectHideFlags: 0
