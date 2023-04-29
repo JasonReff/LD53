@@ -14,6 +14,13 @@ public class FollowCursor : MonoBehaviour
     {
         _targetJoint2D.enabled = true;
         _targetJoint2D.anchor = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+
+
+        //below code is used for layering
+        int _layer = LayerMask.NameToLayer("Truck3");
+        gameObject.layer = _layer;
+        SpriteRenderer sprite;
+        GetComponent<SpriteRenderer>().sortingOrder = 3;
     }
 
     private void OnMouseDrag()
