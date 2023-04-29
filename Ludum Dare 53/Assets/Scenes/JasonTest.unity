@@ -375,9 +375,29 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8774235031797322056, guid: 1f27b04712eae674bbcf8f145ee3050b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774235031797322056, guid: 1f27b04712eae674bbcf8f145ee3050b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774235031797322056, guid: 1f27b04712eae674bbcf8f145ee3050b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774235031797322056, guid: 1f27b04712eae674bbcf8f145ee3050b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774235031797322056, guid: 1f27b04712eae674bbcf8f145ee3050b, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8774235031797322057, guid: 1f27b04712eae674bbcf8f145ee3050b, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8774235031797322058, guid: 1f27b04712eae674bbcf8f145ee3050b, type: 3}
       propertyPath: m_Name

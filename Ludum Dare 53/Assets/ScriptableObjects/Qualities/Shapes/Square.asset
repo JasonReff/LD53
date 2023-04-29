@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _qualityName: Square
   _additionalQualityPrefab: {fileID: 7682175617939307345, guid: 67e1827c00526ca48ad2cdb8fa756b9b, type: 3}
-  _shapeSprite: {fileID: 0}
+  _shapeSprite: {fileID: 21300000, guid: 1077955abfa6dea428f1e6d5c6d2fbd1, type: 3}
