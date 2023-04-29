@@ -36,4 +36,13 @@ public static class GameExtensions
     {
         return collection.OrderBy(t => random.Next()).First();
     }
+
+    public static List<T> Pull<T>(this List<T> list, int numberToPull)
+    {
+        System.Random random = new System.Random();
+        if (list.Count < numberToPull)
+            numberToPull = list.Count;
+        List<T> newList = list.OrderBy(t => random.Next()).Take(numberToPull).ToList();
+        return newList;
+    }
 }

@@ -183,10 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1f13ff9a86aedd48a4fb668010957c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shape: {fileID: 11400000, guid: cea1fd9c4a09ad2479f60847007d6bff, type: 2}
-  _color: {fileID: 11400000, guid: faef6740b8273b94ab020b65bce8dbc9, type: 2}
-  _additionalQualities: []
   _shapeImage: {fileID: 1836017248676470479}
+  _pool: {fileID: 11400000, guid: be8e17dd7a7d4f3448784d9a23d26d81, type: 2}
 --- !u!114 &-5270359834122086275
 MonoBehaviour:
   m_ObjectHideFlags: 0

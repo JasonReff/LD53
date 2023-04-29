@@ -7,6 +7,7 @@ public class PackageQualities : MonoBehaviour
 {
     [SerializeField] private Qualities _qualities;
     [SerializeField] private SpriteRenderer _shapeImage;
+    [SerializeField] private QualityPool _pool;
 
     public Qualities Qualities { get => _qualities; }
     
@@ -14,19 +15,15 @@ public class PackageQualities : MonoBehaviour
 
     private void Start()
     {
-        ShowQualities();
+        ShowQualities(_pool.RandomQualities());
     }
 
-    public void ShowQualities(ShapeQuality shape = null, ColorQuality color = null, List<LayeredQuality> qualities = null)
+    public void ShowQualities(Qualities qualities)
     {
-        if (shape != null)
-            _qualities.Shape = shape;
-        if (color != null)
-            _qualities.Color = color;
-        if (qualities != null)
-            _qualities.AdditionalQualities = qualities;
+        _qualities = qualities;
         _qualities.Shape.ShowQuality(this);
         _qualities.Color.ShowQuality(this);
+        _qualities.Size.ShowQuality(this);
         foreach (var quality in _qualities.AdditionalQualities)
         {
             quality.ShowQuality(this);
@@ -38,12 +35,14 @@ public struct Qualities
 {
     public ShapeQuality Shape;
     public ColorQuality Color;
+    public SizeQuality Size;
     public List<LayeredQuality> AdditionalQualities;
 
-    public Qualities(ShapeQuality shape, ColorQuality color, List<LayeredQuality> additionalQualities)
+    public Qualities(ShapeQuality shape, ColorQuality color, SizeQuality size, List<LayeredQuality> additionalQualities)
     {
         Shape = shape;
         Color = color;
+        Size = size;
         AdditionalQualities = additionalQualities;
     }
 
@@ -57,6 +56,8 @@ public struct Qualities
         {
             return false;
         }
+        if (qualities1.Size != qualities2.Size)
+            return false;
         foreach (var quality in qualities1.AdditionalQualities)
         {
             if (!qualities2.AdditionalQualities.Contains(quality))
