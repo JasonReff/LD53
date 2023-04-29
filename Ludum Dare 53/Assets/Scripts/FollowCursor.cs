@@ -10,7 +10,7 @@ public class FollowCursor : MonoBehaviour
     private Vector2 _velocity;
 
 
-    private void OnMouseDown()
+    public void OnClick()
     {
         _targetJoint2D.enabled = true;
         _targetJoint2D.anchor = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -23,13 +23,13 @@ public class FollowCursor : MonoBehaviour
         GetComponent<SpriteRenderer>().sortingOrder = 3;
     }
 
-    private void OnMouseDrag()
+    public void OnDrag()
     {
         _targetJoint2D.target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         _velocity = _rigidbody.velocity;
     }
 
-    private void OnMouseUp()
+    public void OnUnclick()
     {
         _targetJoint2D.enabled = false;
         _rigidbody.AddForce(Vector2.ClampMagnitude(_velocity, _maxForce));

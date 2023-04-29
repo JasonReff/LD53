@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _qualityName: Envelope
   _additionalQualityPrefab: {fileID: 0}
-  _shapeSprite: {fileID: 21300000, guid: 9ee82d880ca81b1499681d331cba67b6, type: 3}
+  _shapeSprite: {fileID: 21300000, guid: 1ae2c9a878fad154a8da37bea6157efa, type: 3}

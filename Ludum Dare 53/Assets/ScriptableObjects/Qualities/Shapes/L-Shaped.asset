@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _qualityName: L-Shaped
   _additionalQualityPrefab: {fileID: 0}
-  _shapeSprite: {fileID: 21300000, guid: e36f692bf6432e540bd6e249877bd54b, type: 3}
+  _shapeSprite: {fileID: 21300000, guid: a428bd672d35b6f4a8b83abd2a56754a, type: 3}

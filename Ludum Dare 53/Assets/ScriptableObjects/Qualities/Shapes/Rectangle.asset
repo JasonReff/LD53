@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _qualityName: Rectangle
   _additionalQualityPrefab: {fileID: 0}
-  _shapeSprite: {fileID: 21300000, guid: ad583ba58b14f7443bed2f6558ab5f12, type: 3}
+  _shapeSprite: {fileID: 21300000, guid: 28fd687ada03fb54cbd709d5f2e0ab35, type: 3}

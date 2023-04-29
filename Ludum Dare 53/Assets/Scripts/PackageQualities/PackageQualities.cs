@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PackageQualities : MonoBehaviour
 {
     [SerializeField] private Qualities _qualities;
+    [SerializeField] private PolygonCollider2D _collider;
     [SerializeField] private SpriteRenderer _shapeImage;
     [SerializeField] private QualityPool _pool;
 
@@ -24,9 +25,21 @@ public class PackageQualities : MonoBehaviour
         _qualities.Shape.ShowQuality(this);
         _qualities.Color.ShowQuality(this);
         _qualities.Size.ShowQuality(this);
+        ResetCollider();
         foreach (var quality in _qualities.AdditionalQualities)
         {
             quality.ShowQuality(this);
+        }
+    }
+
+    private void ResetCollider()
+    {
+        List<Vector2> path = new List<Vector2>();
+        for (int i = 0; i < _collider.pathCount; i++)
+        {
+            path.Clear();
+            _shapeImage.sprite.GetPhysicsShape(i, path);
+            _collider.SetPath(i, path.ToArray());
         }
     }
 }
