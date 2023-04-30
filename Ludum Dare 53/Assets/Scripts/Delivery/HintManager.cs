@@ -7,10 +7,29 @@ using UnityEngine;
 public class HintManager : MonoBehaviour
 {
     [SerializeField] private Transform _hintGiver;
-    [SerializeField] private float _characterDown, _characterUp, _hintDelay;
+    [SerializeField] private float _characterDown, _characterUp, _characterBob, _hintLength;
     [SerializeField] private TextMeshProUGUI _hintTextbox;
+    [SerializeField] private GameObject _textbox;
+    [SerializeField] private float _hintTimer = 20f;
+    private float _timer = 0f;
     private List<Quality> _hintsGiven = new List<Quality>();
     private Qualities _packageQualities;
+
+    private void Update()
+    {
+        if (_timer <= _hintTimer)
+        {
+            _timer += Time.deltaTime;
+        }
+        else
+        {
+            _timer = 0f;
+            if (_packageQualities != null)
+            {
+                GetNextHint();
+            }
+        }
+    }
 
     public void SetQualities(Qualities qualities)
     {
@@ -22,6 +41,7 @@ public class HintManager : MonoBehaviour
         var hints = GetRemainingHints();
         var randomHint = hints.Rand();
         _hintsGiven.Add(randomHint);
+        DisplayHint(randomHint);
     }
 
     public void DisplayHint(Quality quality)
@@ -30,11 +50,14 @@ public class HintManager : MonoBehaviour
 
         IEnumerator HintCoroutine()
         {
-            _hintGiver.DOMoveY(_characterUp, _hintDelay);
-            yield return new WaitForSeconds(_hintDelay);
+            _textbox.SetActive(false);
+            _hintGiver.DOLocalMoveY(_characterUp, _characterBob);
+            yield return new WaitForSeconds(_characterBob);
+            _textbox.SetActive(true);
             _hintTextbox.text = quality.QualityName;
-            yield return new WaitForSeconds(_hintDelay);
-            _hintGiver.DOMoveY(_characterDown, _hintDelay);
+            yield return new WaitForSeconds(_hintLength);
+            _hintGiver.DOLocalMoveY(_characterDown, _characterBob);
+            _textbox.SetActive(false);
         }
     }
 
