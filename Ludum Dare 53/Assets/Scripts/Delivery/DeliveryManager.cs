@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DeliveryManager : MonoBehaviour
@@ -7,6 +8,7 @@ public class DeliveryManager : MonoBehaviour
     [SerializeField] private int _startingLives = 3, _minimumPackages = 3;
     [SerializeField] private PackageSpawner _spawner;
     [SerializeField] private int _barcodeLength = 10, _barcodeAlterations = 3;
+    [SerializeField] private TextMeshProUGUI _desiredBarcode, _selectedBarcode;
     private List<PackageQualities> _allPackages = new List<PackageQualities>();
     private int _currentLives;
     private int _points;
@@ -21,11 +23,23 @@ public class DeliveryManager : MonoBehaviour
     private void OnEnable()
     {
         Deliverable.OnPackageDelivered += OnDelivery;
+        PackageQualities.OnPackageHeld += ShowSelectedPackage;
+        PackageQualities.OnPackageDropped += HideSelectedPackage;
     }
 
     private void OnDisable()
     {
         Deliverable.OnPackageDelivered -= OnDelivery;
+        PackageQualities.OnPackageHeld -= ShowSelectedPackage;
+        PackageQualities.OnPackageDropped -= HideSelectedPackage;
+    }
+
+    public void SetDesiredQualities()
+    {
+        if (_desiredPackageQualities != null)
+            return;
+        _desiredPackageQualities = _allPackages.Rand().Qualities;
+        CreateBarcode();
     }
 
     private void CreateBarcode()
@@ -41,6 +55,7 @@ public class DeliveryManager : MonoBehaviour
                 package.Qualities = qualities;
             }
         }
+        _desiredBarcode.text = barcode;
     }
 
     private string AlteredBarcode(string original)
@@ -58,6 +73,16 @@ public class DeliveryManager : MonoBehaviour
             indexesLeft.Remove(index);
         }
         return barcode;
+    }
+
+    private void ShowSelectedPackage(PackageQualities package)
+    {
+        _selectedBarcode.text = package.Qualities.Barcode;
+    }
+
+    private void HideSelectedPackage()
+    {
+        _selectedBarcode.text = "";
     }
 
     private void OnDelivery(Deliverable deliverable)
@@ -86,6 +111,8 @@ public class DeliveryManager : MonoBehaviour
     private void DeliverySuccessful(Deliverable deliverable)
     {
         _points += deliverable.Points;
+        _desiredPackageQualities = null;
+        SetDesiredQualities();
     }
 
     private void LoseLife()

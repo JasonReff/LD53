@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,9 @@ public class PackageQualities : MonoBehaviour
     [SerializeField] private QualityPool _pool;
     public AudioClip ShakeSound;
     private float _soundTimer = 0f, _soundDelay = 0.5f;
+
+    public static event Action<PackageQualities> OnPackageHeld;
+    public static event Action OnPackageDropped;
 
     public Qualities Qualities { get => _qualities; set => _qualities = value; }
     
@@ -61,6 +65,16 @@ public class PackageQualities : MonoBehaviour
         }
     }
 
+    public void OnClick()
+    {
+        OnPackageHeld?.Invoke(this);
+    }
+
+    public void OnUnclick()
+    {
+        OnPackageDropped?.Invoke();
+    }
+
     public void OnShake()
     {
         if (_soundTimer >= _soundDelay)
@@ -70,14 +84,9 @@ public class PackageQualities : MonoBehaviour
         }
         
     }
-
-    public void EndShake()
-    {
-        //AudioManager.EndSoundEffect();
-    }
 }
 
-public struct Qualities
+public class Qualities
 {
     public ShapeQuality Shape;
     public ColorQuality Color;
@@ -87,46 +96,4 @@ public struct Qualities
     public List<LayeredQuality> AdditionalQualities;
     public string Barcode;
 
-    public Qualities(ShapeQuality shape, ColorQuality color, SizeQuality size, SoundQuality sound, SlipperyQuality wetness, List<LayeredQuality> additionalQualities, string barcode)
-    {
-        Shape = shape;
-        Color = color;
-        Size = size;
-        Wetness = wetness;
-        Sound = sound;
-        AdditionalQualities = additionalQualities;
-        Barcode = barcode;
-    }
-
-    public static bool operator == (Qualities qualities1, Qualities qualities2)
-    {
-        if (qualities1.Shape != qualities2.Shape)
-        {
-            return false;
-        }
-        if (qualities1.Color != qualities2.Color)
-        {
-            return false;
-        }
-        if (qualities1.Size != qualities2.Size)
-            return false;
-        if (qualities1.Wetness != qualities2.Wetness)
-            return false;
-        if (qualities1.Sound != qualities2.Sound)
-            return false;
-        foreach (var quality in qualities1.AdditionalQualities)
-        {
-            if (!qualities2.AdditionalQualities.Contains(quality))
-                return false;
-        }
-        foreach (var quality in qualities2.AdditionalQualities)
-            if (!qualities1.AdditionalQualities.Contains(quality))
-                return false;
-        return true;
-    }
-
-    public static bool operator != (Qualities qualities1, Qualities qualities2)
-    {
-        return !(qualities1 == qualities2);
-    }
 }

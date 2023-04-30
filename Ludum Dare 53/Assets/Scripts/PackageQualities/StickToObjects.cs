@@ -32,7 +32,6 @@ public class StickToObjects : MonoBehaviour
         }
         if (_fixedJoint.enabled &&_rigidbody.velocity.sqrMagnitude > _maximumVelocity)
         {
-            _fixedJoint.connectedBody.GetComponent<PackageQualities>().EndShake();
             _fixedJoint.connectedBody = null;
             _fixedJoint.enabled = false;
         }

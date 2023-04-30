@@ -45,7 +45,6 @@ public class CursorManager : MonoBehaviour
     {
         if (_object == null)
             return;
-        EndShake();
         _object.OnUnclick();
         _object = null;
     }
@@ -64,32 +63,6 @@ public class CursorManager : MonoBehaviour
                     {
                         joint.connectedBody.GetComponent<PackageQualities>().OnShake();
                     }
-                }
-            }
-            else
-            {
-                _object.GetComponent<PackageQualities>().EndShake();
-                if (_object.TryGetComponent(out FixedJoint2D joint))
-                {
-                    if (joint.enabled && joint.connectedBody != null)
-                    {
-                        joint.connectedBody.GetComponent<PackageQualities>().EndShake();
-                    }
-                }
-            }
-        }
-    }
-
-    private void EndShake()
-    {
-        if (_object != null)
-        {
-            _object.GetComponent<PackageQualities>().EndShake();
-            if (_object.TryGetComponent(out FixedJoint2D joint))
-            {
-                if (joint.enabled && joint.connectedBody != null)
-                {
-                    joint.connectedBody.GetComponent<PackageQualities>().EndShake();
                 }
             }
         }

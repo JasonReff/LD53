@@ -126,12 +126,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5603e853fa8b0fb4fa5380e8bccf09d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _package: {fileID: 4346778366069284844}
   _targetJoint2D: {fileID: 1836017248676470474}
   _rigidbody: {fileID: 1836017248676470481}
   _maxForce: 100
   _collider: {fileID: 2735108862399842461}
   _separationForce: 0
   _separationDuration: 0.25
+  _shakeVelocity: 5
 --- !u!257 &1836017248676470474
 TargetJoint2D:
   m_ObjectHideFlags: 0

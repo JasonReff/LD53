@@ -32,6 +32,7 @@ public class PackageSpawner : MonoBehaviour
             }
             yield return new WaitForSeconds(_delay);
             _doorMover.MoveDoorUp();
+            _deliveryManager.SetDesiredQualities();
         }
     }
 

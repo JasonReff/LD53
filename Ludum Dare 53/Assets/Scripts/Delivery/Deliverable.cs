@@ -16,6 +16,5 @@ public class Deliverable : MonoBehaviour
             return;
         _delivered = true;
         OnPackageDelivered?.Invoke(this);
-        Debug.Log("Gain 10 points.");
     }
 }
