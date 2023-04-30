@@ -9,6 +9,7 @@ public class DeliveryManager : MonoBehaviour
     [SerializeField] private PackageSpawner _spawner;
     [SerializeField] private int _barcodeLength = 10, _barcodeAlterations = 3;
     [SerializeField] private TextMeshProUGUI _desiredBarcode, _selectedBarcode;
+    [SerializeField] private HintManager _hintManager;
     private List<PackageQualities> _allPackages = new List<PackageQualities>();
     private int _currentLives;
     private int _points;
@@ -39,6 +40,7 @@ public class DeliveryManager : MonoBehaviour
         if (_desiredPackageQualities != null)
             return;
         _desiredPackageQualities = _allPackages.Rand().Qualities;
+        _hintManager.SetQualities(_desiredPackageQualities);
         CreateBarcode();
     }
 
