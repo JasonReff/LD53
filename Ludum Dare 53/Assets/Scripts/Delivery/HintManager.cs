@@ -13,7 +13,7 @@ public class HintManager : MonoBehaviour
     [SerializeField] private float _characterDown, _characterUp, _characterBob, _hintLength;
     [SerializeField] private TextMeshProUGUI _hintTextbox;
     [SerializeField] private GameObject _textbox;
-    [SerializeField] private float _hintTimer = 20f;
+    [SerializeField] private float _hintTimer = 20f, _shakeIntensity = 10f;
     private float _timer = 0f;
     private List<Quality> _hintsGiven = new List<Quality>();
     private Qualities _packageQualities;
@@ -53,28 +53,46 @@ public class HintManager : MonoBehaviour
         var randomHint = hints.Rand();
         _hintsGiven.Add(randomHint);
         DisplayHint(randomHint);
-        if (_character.GetVoiceLine(randomHint) != null)
-        {
-            var clip = _character.GetVoiceLine(randomHint);
-            AudioManager.PlaySoundEffect(clip);
-        }
     }
 
     public void DisplayHint(Quality quality)
     {
         StartCoroutine(HintCoroutine());
 
-        IEnumerator HintCoroutine()
+
+        IEnumerator HintCoroutine() 
         {
-            _textbox.SetActive(false);
-            _hintGiver.DOLocalMoveY(_characterUp, _characterBob);
-            yield return new WaitForSeconds(_characterBob);
             _textbox.SetActive(true);
             _hintTextbox.text = quality.QualityName;
+            ShakeCharacter(1);
+            if (_character.GetVoiceLine(quality) != null)
+            {
+                var clip = _character.GetVoiceLine(quality);
+                AudioManager.PlaySoundEffect(clip);
+                //ShakeCharacter(clip.length);
+            }
             yield return new WaitForSeconds(_hintLength);
-            _hintGiver.DOLocalMoveY(_characterDown, _characterBob);
+            _hintTextbox.text = "";
             _textbox.SetActive(false);
         }
+        
+    }
+
+    public void MoveCharacterUp()
+    {
+        _textbox.SetActive(false);
+        _hintGiver.DOLocalMoveY(_characterUp, _characterBob);
+    }
+
+    public void MoveCharacterDown()
+    {
+        _hintGiver.DOLocalMoveY(_characterDown, _characterBob);
+        _textbox.SetActive(false);
+    }
+
+    private void ShakeCharacter(float duration)
+    {
+        transform.DOShakePosition(duration, _shakeIntensity);
     }
 
     private List<Quality> GetRemainingHints()

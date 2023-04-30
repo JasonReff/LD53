@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _qualityName: Large
   _additionalQualityPrefab: {fileID: 0}
-  _scale: 1
+  _scale: 0.8
