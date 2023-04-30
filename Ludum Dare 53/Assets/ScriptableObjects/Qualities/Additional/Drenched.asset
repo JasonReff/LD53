@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Drenched
   m_EditorClassIdentifier: 
   _qualityName: Drenched
-  _additionalQualityPrefab: {fileID: 3229034101391674284, guid: 67e1827c00526ca48ad2cdb8fa756b9b, type: 3}
+  _additionalQualityPrefab: {fileID: 2982800280660106796, guid: 487d17b6898d3274b88f3e69e74ecd69, type: 3}
   _qualitySprite: {fileID: 21300000, guid: 331c7335b65fa1b4d91c94d217580ef2, type: 3}
   _incompatibleQualities:
   - {fileID: 11400000, guid: 4245e77b33e8bbe44972cf3a3848591d, type: 2}

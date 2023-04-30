@@ -136,7 +136,7 @@ public class DeliveryManager : MonoBehaviour
         }
     }
 
-    private void GameOver()
+    public void GameOver()
     {
 
     }
