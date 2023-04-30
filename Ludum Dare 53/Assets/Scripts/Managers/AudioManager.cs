@@ -15,6 +15,19 @@ public class AudioManager : SingletonMonobehaviour<AudioManager>
         Instance._effects.PlayOneShot(audioClip);
     }
 
+    public static void LoopSoundEffect(AudioClip audioClip)
+    {
+        float randomPitch = Random.Range(_minPitch, _maxpitch);
+        Instance._effects.pitch = randomPitch;
+        Instance._effects.clip = audioClip;
+        Instance._effects.Play();
+    }
+
+    public static void EndSoundEffect()
+    {
+        Instance._effects.Stop();
+    }
+
     public static void SetMusicVolume(float volume)
     {
         Instance._musicVolume = volume;

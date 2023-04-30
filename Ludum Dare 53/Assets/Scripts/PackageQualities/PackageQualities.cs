@@ -10,6 +10,7 @@ public class PackageQualities : MonoBehaviour
     [SerializeField] private SpriteMask _mask;
     [SerializeField] private SpriteRenderer _shapeImage;
     [SerializeField] private QualityPool _pool;
+    public AudioClip ShakeSound;
 
     public Qualities Qualities { get => _qualities; set => _qualities = value; }
     
@@ -17,7 +18,7 @@ public class PackageQualities : MonoBehaviour
 
     private void Start()
     {
-        ShowQualities(_pool.RandomQualities());
+        //ShowQualities(_pool.RandomQualities());
     }
 
     public void ShowQualities(Qualities qualities)
@@ -26,6 +27,7 @@ public class PackageQualities : MonoBehaviour
         _qualities.Shape.ShowQuality(this);
         _qualities.Color.ShowQuality(this);
         _qualities.Size.ShowQuality(this);
+        _qualities.Sound.ShowQuality(this);
         _qualities.Wetness.ShowQuality(this);
         _mask.sprite = _shapeImage.sprite;
         ResetCollider();
@@ -49,6 +51,16 @@ public class PackageQualities : MonoBehaviour
             _collider.SetPath(i, path.ToArray());
         }
     }
+
+    public void OnShake()
+    {
+        AudioManager.PlaySoundEffect(ShakeSound);
+    }
+
+    public void EndShake()
+    {
+        //AudioManager.EndSoundEffect();
+    }
 }
 
 public struct Qualities
@@ -56,16 +68,18 @@ public struct Qualities
     public ShapeQuality Shape;
     public ColorQuality Color;
     public SizeQuality Size;
+    public SoundQuality Sound;
     public SlipperyQuality Wetness;
     public List<LayeredQuality> AdditionalQualities;
     public string Barcode;
 
-    public Qualities(ShapeQuality shape, ColorQuality color, SizeQuality size, SlipperyQuality wetness, List<LayeredQuality> additionalQualities, string barcode)
+    public Qualities(ShapeQuality shape, ColorQuality color, SizeQuality size, SoundQuality sound, SlipperyQuality wetness, List<LayeredQuality> additionalQualities, string barcode)
     {
         Shape = shape;
         Color = color;
         Size = size;
         Wetness = wetness;
+        Sound = sound;
         AdditionalQualities = additionalQualities;
         Barcode = barcode;
     }
@@ -83,6 +97,8 @@ public struct Qualities
         if (qualities1.Size != qualities2.Size)
             return false;
         if (qualities1.Wetness != qualities2.Wetness)
+            return false;
+        if (qualities1.Sound != qualities2.Sound)
             return false;
         foreach (var quality in qualities1.AdditionalQualities)
         {

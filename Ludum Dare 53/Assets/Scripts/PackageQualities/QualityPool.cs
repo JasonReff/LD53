@@ -8,6 +8,7 @@ public class QualityPool : ScriptableObject
     [SerializeField] private List<ShapeQuality> _shapes = new List<ShapeQuality>();
     [SerializeField] private List<ColorQuality> _colors = new List<ColorQuality>();
     [SerializeField] private List<SizeQuality> _sizes = new List<SizeQuality>();
+    [SerializeField] private List<SoundQuality> _sounds = new List<SoundQuality>();
     [SerializeField] private List<SlipperyQuality> _wetnesses = new List<SlipperyQuality>();
     [SerializeField] private List<LayeredQuality> _layeredQualities = new List<LayeredQuality>();
 
@@ -18,6 +19,7 @@ public class QualityPool : ScriptableObject
         qualities.Color = _colors.Rand();
         qualities.Size = _sizes.Rand();
         qualities.Wetness = _wetnesses.Rand();
+        qualities.Sound = _sounds.Rand();
         qualities.AdditionalQualities = GetLayeredQualities();
         return qualities;
     }

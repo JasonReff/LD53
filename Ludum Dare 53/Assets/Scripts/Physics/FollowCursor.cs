@@ -10,6 +10,7 @@ public class FollowCursor : MonoBehaviour
     [SerializeField] private float _maxForce = 10;
     [SerializeField] private PolygonCollider2D _collider;
     [SerializeField] private float _separationForce, _separationDuration = 0.25f;
+    [SerializeField] private float _shakeVelocity = 5;
     private Vector2 _velocity;
 
 

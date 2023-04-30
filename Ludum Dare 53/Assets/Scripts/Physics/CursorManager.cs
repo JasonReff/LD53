@@ -5,7 +5,7 @@ using UnityEngine;
 public class CursorManager : MonoBehaviour
 {
     [SerializeField] private Camera _main;
-    
+    [SerializeField] private float _shakeVelocity;
     private FollowCursor _object;
     private void Update()
     {
@@ -38,14 +38,61 @@ public class CursorManager : MonoBehaviour
         if (_object == null)
             return;
         _object.OnDrag();
+        OnShake();
     }
 
     private void OnUnclick()
     {
         if (_object == null)
             return;
+        EndShake();
         _object.OnUnclick();
         _object = null;
+    }
+
+    private void OnShake()
+    {
+        if (_object != null)
+        {
+            var speed = _object.GetComponent<Rigidbody2D>().velocity.sqrMagnitude;
+            if (speed > _shakeVelocity)
+            {
+                _object.GetComponent<PackageQualities>().OnShake();
+                if (_object.TryGetComponent(out FixedJoint2D joint))
+                {
+                    if (joint.enabled && joint.connectedBody != null)
+                    {
+                        joint.connectedBody.GetComponent<PackageQualities>().OnShake();
+                    }
+                }
+            }
+            else
+            {
+                _object.GetComponent<PackageQualities>().EndShake();
+                if (_object.TryGetComponent(out FixedJoint2D joint))
+                {
+                    if (joint.enabled && joint.connectedBody != null)
+                    {
+                        joint.connectedBody.GetComponent<PackageQualities>().EndShake();
+                    }
+                }
+            }
+        }
+    }
+
+    private void EndShake()
+    {
+        if (_object != null)
+        {
+            _object.GetComponent<PackageQualities>().EndShake();
+            if (_object.TryGetComponent(out FixedJoint2D joint))
+            {
+                if (joint.enabled && joint.connectedBody != null)
+                {
+                    joint.connectedBody.GetComponent<PackageQualities>().EndShake();
+                }
+            }
+        }
     }
 
     

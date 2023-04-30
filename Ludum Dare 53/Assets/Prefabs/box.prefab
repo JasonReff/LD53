@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -5270359834122086275}
   - component: {fileID: 2735108862399842461}
   - component: {fileID: 6753037235542341732}
+  - component: {fileID: -5021633784266810975}
   m_Layer: 8
   m_Name: box
   m_TagString: Untagged
@@ -166,6 +167,7 @@ MonoBehaviour:
   _mask: {fileID: 5199874690275254984}
   _shapeImage: {fileID: 1836017248676470479}
   _pool: {fileID: 11400000, guid: be8e17dd7a7d4f3448784d9a23d26d81, type: 2}
+  ShakeSound: {fileID: 0}
 --- !u!114 &-5270359834122086275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,6 +338,18 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_SortAtRoot: 0
+--- !u!114 &-5021633784266810975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836017248676470483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a507b35bddb9746bb6aacb39da96d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7105344409009191102
 GameObject:
   m_ObjectHideFlags: 0
