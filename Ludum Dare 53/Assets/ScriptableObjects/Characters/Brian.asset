@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterName: Brian
   _characterSprite: {fileID: -433532452, guid: bbec1c5f651354c4babeb1dfc30e9682, type: 3}
+  _speechBubbleSprite: {fileID: 21300000, guid: de86a3edc6945ec44baffcea38366a2d, type: 3}
   _voiceLines: []
   _nonHints: []

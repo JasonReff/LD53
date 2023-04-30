@@ -8,12 +8,14 @@ using UnityEngine;
 public class CharacterData : ScriptableObject
 {
     [SerializeField] private string _characterName;
-    [SerializeField] private Sprite _characterSprite;
+    [SerializeField] private Sprite _characterSprite, _speechBubbleSprite;
     [SerializeField] private List<VoiceLines> _voiceLines = new List<VoiceLines>();
-    [SerializeField] private List<AudioClip> _nonHints = new List<AudioClip>();
+    [SerializeField] private List<AudioClip> _nonHints = new List<AudioClip>(), _incorrectGuesses = new List<AudioClip>();
 
     public Sprite CharacterSprite { get => _characterSprite; }
+    public Sprite SpeechBubble { get => _speechBubbleSprite; }
     public string CharacterName { get => _characterName; }
+    public List<AudioClip> IncorrectGuesses { get => _incorrectGuesses; }
 
     public AudioClip GetVoiceLine(Quality quality)
     {

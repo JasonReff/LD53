@@ -95,4 +95,17 @@ public class Qualities
     public SlipperyQuality Wetness;
     public List<LayeredQuality> AdditionalQualities;
     public string Barcode;
+
+    public List<Quality> GetAllQualities()
+    {
+        var qualities = new List<Quality>();
+        qualities.Add(Shape);
+        qualities.Add(Color);
+        qualities.Add(Size);
+        qualities.Add(Sound);
+        qualities.Add(Wetness);
+        foreach (var quality in AdditionalQualities)
+            qualities.Add(quality);
+        return qualities;
+    }
 }
