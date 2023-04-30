@@ -105,6 +105,7 @@ public class DeliveryManager : MonoBehaviour
         else
         {
             LoseLife();
+            Destroy(deliverable.gameObject);
         }
     }
 

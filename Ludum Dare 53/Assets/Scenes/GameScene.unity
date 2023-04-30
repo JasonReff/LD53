@@ -1353,6 +1353,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c5f95f6cc36f034abf689681d4797b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _deliveredPackage: {fileID: 0}
+  _packagePivot: {x: -20, y: 0}
 --- !u!1 &1144654379
 GameObject:
   m_ObjectHideFlags: 0
@@ -2878,7 +2880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3649894595290811321, guid: 4825189b58b31d24599ebdf496c25c91, type: 3}
       propertyPath: _characterUp
-      value: -214
+      value: -235
       objectReference: {fileID: 0}
     - target: {fileID: 3649894595290811321, guid: 4825189b58b31d24599ebdf496c25c91, type: 3}
       propertyPath: _characterDown
@@ -3010,7 +3012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7321258832741210226, guid: 4825189b58b31d24599ebdf496c25c91, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -897.93
+      value: -900
       objectReference: {fileID: 0}
     - target: {fileID: 7321258832741210226, guid: 4825189b58b31d24599ebdf496c25c91, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3027,7 +3029,7 @@ PrefabInstance:
     - target: {fileID: 7321258832741210227, guid: 4825189b58b31d24599ebdf496c25c91, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1831763631, guid: bbec1c5f651354c4babeb1dfc30e9682, type: 3}
+      objectReference: {fileID: 731088474, guid: bbec1c5f651354c4babeb1dfc30e9682, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 4825189b58b31d24599ebdf496c25c91, type: 3}

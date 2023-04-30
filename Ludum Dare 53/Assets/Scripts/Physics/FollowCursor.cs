@@ -6,6 +6,7 @@ using UnityEngine.Rendering;
 public class FollowCursor : MonoBehaviour
 {
     [SerializeField] private PackageQualities _package;
+    [SerializeField] private Deliverable _deliverable;
     [SerializeField] private TargetJoint2D _targetJoint2D;
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private float _maxForce = 10;
@@ -20,6 +21,7 @@ public class FollowCursor : MonoBehaviour
         _targetJoint2D.enabled = true;
         _targetJoint2D.anchor = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         _package.OnClick();
+        _deliverable.IsDragged = true;
         BringToFront();
     }
 
@@ -40,6 +42,7 @@ public class FollowCursor : MonoBehaviour
         _targetJoint2D.enabled = false;
         _rigidbody.AddForce(Vector2.ClampMagnitude(_velocity, _maxForce));
         _package.OnUnclick();
+        _deliverable.OnUnclick();
         BringToLayer(3);
     }
 
