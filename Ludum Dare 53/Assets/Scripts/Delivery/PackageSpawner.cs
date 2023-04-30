@@ -11,7 +11,8 @@ public class PackageSpawner : MonoBehaviour
     [SerializeField] private int _minimumLoad = 5, _maximumLoad = 9;
     [SerializeField] private int _maximumPerLayer = 5;
     [SerializeField] private TruckDoorMover _doorMover;
-    [SerializeField] private float _delay;
+    [SerializeField] private float _preSpawnDelay, _postSpawnDelay;
+    [SerializeField] private HintManager _hintManager;
     private void Start()
     {
         SpawnPackages();
@@ -21,18 +22,47 @@ public class PackageSpawner : MonoBehaviour
     {
         StartCoroutine(SpawnCoroutine());
 
-        IEnumerator SpawnCoroutine()
+        
+    }
+
+    private IEnumerator SpawnCoroutine()
+    {
+        _doorMover.MoveDoorDown();
+        _hintManager.MoveCharacterDown();
+        yield return new WaitForSeconds(_preSpawnDelay);
+        var count = Random.Range(_minimumLoad, _maximumLoad + 1);
+        for (int i = 0; i < count; i++)
+        {
+            SpawnPackage(i / _maximumPerLayer + 1);
+        }
+        yield return new WaitForSeconds(_postSpawnDelay);
+        _doorMover.MoveDoorUp();
+        _deliveryManager.SetDesiredQualities();
+        _hintManager.MoveCharacterUp();
+    }
+
+    public void OnCorrectDelivery(List<PackageQualities> remainingPackages)
+    {
+        StartCoroutine(DeliveryCoroutine());
+
+        IEnumerator DeliveryCoroutine() 
         {
             _doorMover.MoveDoorDown();
-            yield return new WaitForSeconds(_delay);
+            yield return new WaitForSeconds(_preSpawnDelay);
+            for (int i = 0; i < remainingPackages.Count; i++)
+            {
+                Destroy(remainingPackages[i].transform.gameObject);
+            }
+            _deliveryManager.AllPackages.Clear();
             var count = Random.Range(_minimumLoad, _maximumLoad + 1);
             for (int i = 0; i < count; i++)
             {
                 SpawnPackage(i / _maximumPerLayer + 1);
             }
-            yield return new WaitForSeconds(_delay);
+            yield return new WaitForSeconds(_postSpawnDelay);
             _doorMover.MoveDoorUp();
             _deliveryManager.SetDesiredQualities();
+
         }
     }
 

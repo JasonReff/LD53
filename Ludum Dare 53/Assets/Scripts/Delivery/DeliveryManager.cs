@@ -94,8 +94,6 @@ public class DeliveryManager : MonoBehaviour
             _allPackages.Remove(package);
             ComparePackage(deliverable);
         }
-        if (_allPackages.Count < _minimumPackages)
-            _spawner.SpawnPackages();
     }
 
     private void ComparePackage(Deliverable deliverable)
@@ -114,7 +112,7 @@ public class DeliveryManager : MonoBehaviour
     {
         _points += deliverable.Points;
         _desiredPackageQualities = null;
-        SetDesiredQualities();
+        _spawner.OnCorrectDelivery(_allPackages);
     }
 
     private void LoseLife()
