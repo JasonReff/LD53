@@ -11,9 +11,9 @@ public class DeliveryManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _desiredBarcode, _selectedBarcode;
     [SerializeField] private HintManager _hintManager;
     [SerializeField] private PackageRespawner _respawner;
+    [SerializeField] private ScoreManager _scoreManager;
     private List<PackageQualities> _allPackages = new List<PackageQualities>();
     private int _currentLives;
-    private int _points;
 
     public List<PackageQualities> AllPackages { get => _allPackages; }
 
@@ -122,7 +122,7 @@ public class DeliveryManager : MonoBehaviour
 
     private void DeliverySuccessful(Deliverable deliverable)
     {
-        _points += deliverable.Points;
+        _scoreManager.OnPackageDelivered();
         _desiredPackageQualities = null;
         _spawner.OnCorrectDelivery(_allPackages);
     }
