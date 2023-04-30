@@ -71,7 +71,10 @@ public class FollowCursor : MonoBehaviour
             }
             yield return new WaitForSeconds(_separationDuration);
         }
-        BringToLayer(5);
+        if (_targetJoint2D.enabled)
+        {
+            BringToLayer(5);
+        }
     }
 
     public void BringToLayer(int layer)
