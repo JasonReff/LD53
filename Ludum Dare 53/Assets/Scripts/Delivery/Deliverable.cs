@@ -9,8 +9,9 @@ public class Deliverable : MonoBehaviour
     [SerializeField] private Collider2D _collider;
     public bool IsDragged;
 
+    public bool Delivered { get => _delivered; }
     public int Points { get => _pointsForDelivering; }
-    public static Action<Deliverable> OnPackageDelivered;
+    public static Action<Deliverable> OnPackageDelivered, OnPackageDropped;
 
     public void DeliverPackage()
     {
@@ -23,16 +24,6 @@ public class Deliverable : MonoBehaviour
     public void OnUnclick()
     {
         IsDragged = false;
-        List<Collider2D> colliders = new List<Collider2D>();
-        ContactFilter2D filter = new ContactFilter2D();
-        filter.layerMask = LayerMask.NameToLayer("UI");
-        _collider.OverlapCollider(filter, colliders);
-        foreach (var collider in colliders)
-        {
-            if (collider.TryGetComponent(out DeliveryZone zone))
-            {
-                zone.DeliverPackage(this);
-            }
-        }
+        OnPackageDropped?.Invoke(this);
     }
 }

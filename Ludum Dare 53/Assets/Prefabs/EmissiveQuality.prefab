@@ -78,15 +78,15 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: f744aea1b32a5724fbf286d8544dc8ee, type: 3}
     - target: {fileID: 7682175617939307345, guid: 67e1827c00526ca48ad2cdb8fa756b9b, type: 3}
       propertyPath: m_Color.b
-      value: 0.1448469
+      value: 0.05098039
       objectReference: {fileID: 0}
     - target: {fileID: 7682175617939307345, guid: 67e1827c00526ca48ad2cdb8fa756b9b, type: 3}
       propertyPath: m_Color.g
-      value: 0.8215925
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7682175617939307345, guid: 67e1827c00526ca48ad2cdb8fa756b9b, type: 3}
       propertyPath: m_Color.r
-      value: 0.8773585
+      value: 0.35693094
       objectReference: {fileID: 0}
     - target: {fileID: 7682175617939307345, guid: 67e1827c00526ca48ad2cdb8fa756b9b, type: 3}
       propertyPath: m_SortingOrder
@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _light: {fileID: 4729009810483752238}
+  _amplitude: 1.5
 --- !u!212 &4729009810483752238 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7682175617939307345, guid: 67e1827c00526ca48ad2cdb8fa756b9b, type: 3}
