@@ -95,5 +95,4 @@ public class Qualities
     public SlipperyQuality Wetness;
     public List<LayeredQuality> AdditionalQualities;
     public string Barcode;
-
 }

@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f86b9de481ac013429fd627d039ba74f, type: 3}
-  m_Name: Radioactive
+  m_Name: Dirty
   m_EditorClassIdentifier: 
-  _qualityName: Radioactive
-  _additionalQualityPrefab: {fileID: 1315652664838132658, guid: cae37266cd53a8a45a40d5d783ee3bd4, type: 3}
+  _qualityName: Dirty
+  _additionalQualityPrefab: {fileID: 0}
   _qualitySprite: {fileID: 0}
-  _incompatibleQualities:
-  - {fileID: 11400000, guid: f558a8f1f99b9864b95fbf84febf468f, type: 2}
+  _incompatibleQualities: []

@@ -3,9 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HintManager : MonoBehaviour
 {
+    [SerializeField] private CharacterData _character;
+    [SerializeField] private CharacterPool _pool;
     [SerializeField] private Transform _hintGiver;
     [SerializeField] private float _characterDown, _characterUp, _characterBob, _hintLength;
     [SerializeField] private TextMeshProUGUI _hintTextbox;
@@ -14,6 +17,12 @@ public class HintManager : MonoBehaviour
     private float _timer = 0f;
     private List<Quality> _hintsGiven = new List<Quality>();
     private Qualities _packageQualities;
+
+    private void Start()
+    {
+        _character = _pool.Characters.Rand();
+        GetComponent<Image>().sprite = _character.CharacterSprite;
+    }
 
     private void Update()
     {
@@ -39,9 +48,16 @@ public class HintManager : MonoBehaviour
     public void GetNextHint()
     {
         var hints = GetRemainingHints();
+        if (hints.Count == 0)
+            return;
         var randomHint = hints.Rand();
         _hintsGiven.Add(randomHint);
         DisplayHint(randomHint);
+        if (_character.GetVoiceLine(randomHint) != null)
+        {
+            var clip = _character.GetVoiceLine(randomHint);
+            AudioManager.PlaySoundEffect(clip);
+        }
     }
 
     public void DisplayHint(Quality quality)

@@ -379,6 +379,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d6224a8067514448b16e7ed949ef23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _character: {fileID: 0}
+  _pool: {fileID: 11400000, guid: 3e6075856b8f86742a21831743ad0ee4, type: 2}
   _hintGiver: {fileID: 7321258832741210226}
   _characterDown: -760
   _characterUp: -360
