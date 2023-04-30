@@ -11,6 +11,7 @@ public class PackageQualities : MonoBehaviour
     [SerializeField] private SpriteRenderer _shapeImage;
     [SerializeField] private QualityPool _pool;
     public AudioClip ShakeSound;
+    private float _soundTimer = 0f, _soundDelay = 0.5f;
 
     public Qualities Qualities { get => _qualities; set => _qualities = value; }
     
@@ -19,6 +20,14 @@ public class PackageQualities : MonoBehaviour
     private void Start()
     {
         //ShowQualities(_pool.RandomQualities());
+    }
+
+    private void Update()
+    {
+        if (_soundTimer < _soundDelay)
+        {
+            _soundTimer += Time.deltaTime;
+        }
     }
 
     public void ShowQualities(Qualities qualities)
@@ -54,7 +63,12 @@ public class PackageQualities : MonoBehaviour
 
     public void OnShake()
     {
-        AudioManager.PlaySoundEffect(ShakeSound);
+        if (_soundTimer >= _soundDelay)
+        {
+            _soundTimer = 0f;
+            AudioManager.PlaySoundEffect(ShakeSound);
+        }
+        
     }
 
     public void EndShake()
