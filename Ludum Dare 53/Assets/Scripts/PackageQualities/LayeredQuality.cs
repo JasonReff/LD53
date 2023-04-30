@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Qualities/Additional")]
 public class LayeredQuality : Quality
 {
-    [SerializeField] private Sprite _qualitySprite;
+    [SerializeField] protected Sprite _qualitySprite;
     [SerializeField] private List<LayeredQuality> _incompatibleQualities;
     public List<LayeredQuality> IncompatibleQualities { get => _incompatibleQualities; }
     public override void ShowQuality(PackageQualities package)

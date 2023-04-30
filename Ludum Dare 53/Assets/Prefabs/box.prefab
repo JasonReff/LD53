@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _package: {fileID: 4346778366069284844}
+  _deliverable: {fileID: -5270359834122086275}
   _targetJoint2D: {fileID: 1836017248676470474}
   _rigidbody: {fileID: 1836017248676470481}
   _maxForce: 100
@@ -183,6 +184,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointsForDelivering: 10
+  _collider: {fileID: 2735108862399842461}
+  IsDragged: 0
 --- !u!60 &2735108862399842461
 PolygonCollider2D:
   m_ObjectHideFlags: 0

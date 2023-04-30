@@ -6,9 +6,12 @@ public class Deliverable : MonoBehaviour
 {
     private bool _delivered;
     [SerializeField] private int _pointsForDelivering;
+    [SerializeField] private Collider2D _collider;
+    public bool IsDragged;
 
+    public bool Delivered { get => _delivered; }
     public int Points { get => _pointsForDelivering; }
-    public static Action<Deliverable> OnPackageDelivered;
+    public static Action<Deliverable> OnPackageDelivered, OnPackageDropped;
 
     public void DeliverPackage()
     {
@@ -16,5 +19,11 @@ public class Deliverable : MonoBehaviour
             return;
         _delivered = true;
         OnPackageDelivered?.Invoke(this);
+    }
+
+    public void OnUnclick()
+    {
+        IsDragged = false;
+        OnPackageDropped?.Invoke(this);
     }
 }

@@ -48,6 +48,7 @@ public class PackageSpawner : MonoBehaviour
         IEnumerator DeliveryCoroutine() 
         {
             _doorMover.MoveDoorDown();
+            _hintManager.MoveCharacterDown();
             yield return new WaitForSeconds(_preSpawnDelay);
             for (int i = 0; i < remainingPackages.Count; i++)
             {
@@ -61,6 +62,7 @@ public class PackageSpawner : MonoBehaviour
             }
             yield return new WaitForSeconds(_postSpawnDelay);
             _doorMover.MoveDoorUp();
+            _hintManager.MoveCharacterUp();
             _deliveryManager.SetDesiredQualities();
 
         }

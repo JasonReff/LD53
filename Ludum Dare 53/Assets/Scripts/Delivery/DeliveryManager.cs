@@ -10,6 +10,7 @@ public class DeliveryManager : MonoBehaviour
     [SerializeField] private int _barcodeLength = 10, _barcodeAlterations = 3;
     [SerializeField] private TextMeshProUGUI _desiredBarcode, _selectedBarcode;
     [SerializeField] private HintManager _hintManager;
+    [SerializeField] private PackageRespawner _respawner;
     private List<PackageQualities> _allPackages = new List<PackageQualities>();
     private int _currentLives;
     private int _points;
@@ -87,25 +88,36 @@ public class DeliveryManager : MonoBehaviour
         _selectedBarcode.text = "";
     }
 
-    private void OnDelivery(Deliverable deliverable)
+    public void OnDelivery(Deliverable deliverable)
     {
         if (deliverable.TryGetComponent(out PackageQualities package))
         {
-            _allPackages.Remove(package);
             ComparePackage(deliverable);
         }
     }
 
     private void ComparePackage(Deliverable deliverable)
     {
-        if (deliverable.GetComponent<PackageQualities>().Qualities == _desiredPackageQualities)
+        if (IsCorrectPackage(deliverable))
         {
+            _allPackages.Remove(deliverable.GetComponent<PackageQualities>());
             DeliverySuccessful(deliverable);
         }
         else
         {
-            LoseLife();
+            DeliveryFailed(deliverable);
         }
+    }
+
+    public void DeliveryFailed(Deliverable deliverable)
+    {
+        LoseLife();
+        _respawner.RespawnPackage(deliverable);
+    }
+
+    public bool IsCorrectPackage(Deliverable deliverable)
+    {
+        return deliverable.GetComponent<PackageQualities>().Qualities == _desiredPackageQualities;
     }
 
     private void DeliverySuccessful(Deliverable deliverable)
