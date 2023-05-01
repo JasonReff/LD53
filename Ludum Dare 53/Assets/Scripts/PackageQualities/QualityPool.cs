@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "QualityPool")]
@@ -40,6 +41,18 @@ public class QualityPool : ScriptableObject
                 return qualities;
         }
         return qualities;
+    }
+
+    public List<Quality> GetAllQualities()
+    {
+        var qualities = new List<Quality>();
+        qualities.AddRange(_shapes);
+        qualities.AddRange(_colors);
+        qualities.AddRange(_sizes);
+        qualities.AddRange(_wetnesses);
+        qualities.AddRange(_sounds);
+        qualities.AddRange(_layeredQualities);
+        return qualities.Distinct().ToList();
     }
 
     
