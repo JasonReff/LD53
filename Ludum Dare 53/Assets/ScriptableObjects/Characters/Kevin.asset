@@ -199,6 +199,12 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 2d1f5cd511fb1b84cbf254101f8052c7, type: 3}
     - {fileID: 8300000, guid: b82380e79efa39e449711c45d44ead3e, type: 3}
     - {fileID: 8300000, guid: 5ec8845a588f34d49b2b4095349ae087, type: 3}
+  - _quality: Sloshing
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: 429b2ef3c5ae3ac4496e3baeb4177b0e, type: 3}
+    - {fileID: 8300000, guid: a4ab93b992d5c3b4b9020add440d67a5, type: 3}
+    - {fileID: 8300000, guid: 2bf604cee4e2ab440813b240cb12c517, type: 3}
   _hurryLines:
   - {fileID: 8300000, guid: d165d8586379f1d41b3474eea657b51c, type: 3}
   - {fileID: 8300000, guid: 8add9cab7f33f374ca2428e63f86eaf2, type: 3}

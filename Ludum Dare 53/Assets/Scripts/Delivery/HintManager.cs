@@ -160,6 +160,7 @@ public class HintManager : MonoBehaviour
 
     public void IncorrectDelivery(PackageQualities package)
     {
+        _checkmark.CrossFade("No", 0f);
         if (CorrectSoFar(package.Qualities))
         {
             GetNextHint(package);
@@ -178,6 +179,7 @@ public class HintManager : MonoBehaviour
         _hurryTime = 0f;
         _timer = 0;
         var clip = _character.CorrectGuesses.Rand();
+        _checkmark.CrossFade("Yes", 0f);
         SayVoiceLine(clip);
         yield return new WaitForSeconds(clip.length);
     }

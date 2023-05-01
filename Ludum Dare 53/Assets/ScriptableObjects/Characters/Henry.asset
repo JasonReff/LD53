@@ -204,6 +204,16 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 0324189080b4725419f8d09d8adf5602, type: 3}
     - {fileID: 8300000, guid: 651ec882715941c40a1d2e9277e9f85f, type: 3}
     - {fileID: 8300000, guid: 4fcad7b86e2a09b46b1e7d0cf5c8fab9, type: 3}
+  - _quality: Sloshing
+    _qualityOverride: Sound?
+    _clips:
+    - {fileID: 8300000, guid: dfd456a060a1b814a99cd1e3c828877b, type: 3}
+    - {fileID: 8300000, guid: c078f1209b25c9647b1029a5519dd4f6, type: 3}
+    - {fileID: 8300000, guid: 24dbbddcebda2774ba3d8618809909b5, type: 3}
+    - {fileID: 8300000, guid: 66ae7c1a40189c44aae11c95ba3826f6, type: 3}
+    - {fileID: 8300000, guid: 0324189080b4725419f8d09d8adf5602, type: 3}
+    - {fileID: 8300000, guid: 651ec882715941c40a1d2e9277e9f85f, type: 3}
+    - {fileID: 8300000, guid: 4fcad7b86e2a09b46b1e7d0cf5c8fab9, type: 3}
   _hurryLines:
   - {fileID: 8300000, guid: d7d8e0fc8bfe6074383779a66e87dcc0, type: 3}
   - {fileID: 8300000, guid: 6fffb7b63deb9664398ae9c6bfa15cf6, type: 3}

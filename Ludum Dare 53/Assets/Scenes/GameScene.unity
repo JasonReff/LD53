@@ -4786,12 +4786,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3649894595290811321, guid: 4825189b58b31d24599ebdf496c25c91, type: 3}
+      propertyPath: _checkmark
+      value: 
+      objectReference: {fileID: 1527485827}
+    - target: {fileID: 3649894595290811321, guid: 4825189b58b31d24599ebdf496c25c91, type: 3}
       propertyPath: _characterUp
       value: -235
       objectReference: {fileID: 0}
     - target: {fileID: 3649894595290811321, guid: 4825189b58b31d24599ebdf496c25c91, type: 3}
       propertyPath: _characterDown
       value: -900
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445157499661266183, guid: 4825189b58b31d24599ebdf496c25c91, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445157499661266183, guid: 4825189b58b31d24599ebdf496c25c91, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6097734712741540689, guid: 4825189b58b31d24599ebdf496c25c91, type: 3}
       propertyPath: m_SizeDelta.x
