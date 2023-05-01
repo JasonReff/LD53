@@ -12,10 +12,101 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f9d61891805d19498d2b8470d579b12, type: 3}
   m_Name: Kevin
   m_EditorClassIdentifier: 
-  _characterName: Kevin
+  _characterName: Kev
   _characterSprite: {fileID: -1831763631, guid: bbec1c5f651354c4babeb1dfc30e9682, type: 3}
   _speechBubbleSprite: {fileID: 21300000, guid: 16c7d5cc47ca62947a2dd154067c7938, type: 3}
   _voiceLines:
-  - _quality: Wet
+  - _quality: Circle
     _clips: []
+  - _quality: Envelope
+    _clips:
+    - {fileID: 8300000, guid: dd3cb42d3600bcb4d9987b651a126e59, type: 3}
+    - {fileID: 8300000, guid: bf42d409bb9383d4e8b57067bf22b568, type: 3}
+    - {fileID: 8300000, guid: e3b2b38bf68a9bb41bb2da12ffbece6e, type: 3}
+  - _quality: L-Shaped
+    _clips: []
+  - _quality: Rectangle
+    _clips:
+    - {fileID: 8300000, guid: 6421a86e957434e4fb932a89c57da929, type: 3}
+    - {fileID: 8300000, guid: ca8eaeb951ffc04408dc1a77929ed27f, type: 3}
+    - {fileID: 8300000, guid: cc32028b2cf5eba4fb4bb042452e5bf9, type: 3}
+  - _quality: Square
+    _clips: []
+  - _quality: Triangle
+    _clips: []
+  - _quality: Blue
+    _clips: []
+  - _quality: Green
+    _clips: []
+  - _quality: Red
+    _clips: []
+  - _quality: Brown
+    _clips: []
+  - _quality: Yellow
+    _clips: []
+  - _quality: Small
+    _clips:
+    - {fileID: 8300000, guid: c4bf99bbdb5b3cb4db14a2e86c0d0298, type: 3}
+    - {fileID: 8300000, guid: 007ff8558f85d4743a84257a55e0aa6e, type: 3}
+    - {fileID: 8300000, guid: 989117ef6d71c43439a282ad0be494f3, type: 3}
+  - _quality: Large
+    _clips:
+    - {fileID: 8300000, guid: fa7adbc02e5d33b4c90b6283d552ff52, type: 3}
+    - {fileID: 8300000, guid: a8e3bdde8d09e164ca17b67ca6a27f4b, type: 3}
+    - {fileID: 8300000, guid: f994ebf9fdc643b4bb2c6f18a8f6aba2, type: 3}
+  - _quality: Medium
+    _clips:
+    - {fileID: 8300000, guid: b77b7798c03440448b24a82bde594218, type: 3}
+    - {fileID: 8300000, guid: 3f42797451180cc40b65c8798d6a33c3, type: 3}
+    - {fileID: 8300000, guid: 6e3bcf7c6715eac4283f53037c1e44d7, type: 3}
+  - _quality: Drenched
+    _clips:
+    - {fileID: 8300000, guid: a6e32eaba34cec04ebe7b2bb6c0a416d, type: 3}
+  - _quality: Wet
+    _clips:
+    - {fileID: 8300000, guid: 8c1e929b824cce64ebe5d70b94952444, type: 3}
+    - {fileID: 8300000, guid: d5ce4e72d061f6043a2ac567c18b6d9c, type: 3}
+  - _quality: Dry
+    _clips:
+    - {fileID: 8300000, guid: bc81c5a638de602439af5512a72744ff, type: 3}
+    - {fileID: 8300000, guid: 22164b51aeb546b4c84efedd0622a82b, type: 3}
+    - {fileID: 8300000, guid: aa6d7d2356f075d4e9fd84a0297a8b92, type: 3}
+  - _quality: Glass
+    _clips:
+    - {fileID: 8300000, guid: 8495f930a7b5290479fcdda3fbe58a2c, type: 3}
+    - {fileID: 8300000, guid: 1ee979a3d590b184286879d092efa269, type: 3}
+    - {fileID: 8300000, guid: e9fa4e08f4b4bfe478f46dfa63cddc6c, type: 3}
+  - _quality: Rattle
+    _clips:
+    - {fileID: 8300000, guid: 7a2d658bb70d6db48a3a03d01de952c2, type: 3}
+    - {fileID: 8300000, guid: 84ce88a3f20f3004d85aa7d07c49cc06, type: 3}
+    - {fileID: 8300000, guid: 639dde2d12786d84bbfd04329a305723, type: 3}
+  - _quality: Squeak
+    _clips:
+    - {fileID: 8300000, guid: 774694338b50eb84290374caff6e4212, type: 3}
+    - {fileID: 8300000, guid: b239bf5f34c4a6249bf0c51675402e30, type: 3}
+    - {fileID: 8300000, guid: af2d46bd363bcea498075ee183621c45, type: 3}
+  - _quality: Glittery
+    _clips: []
+  - _quality: Sticky
+    _clips:
+    - {fileID: 8300000, guid: 91fd45f72414192459c6321cfea6f6cb, type: 3}
+    - {fileID: 8300000, guid: fd1736aa69e56284390503935657bf18, type: 3}
+    - {fileID: 8300000, guid: 9d045f688cd8aa64baac6545c4a20301, type: 3}
+  - _quality: Glowing
+    _clips: []
+  - _quality: Smoking
+    _clips: []
+  - _quality: Translucent
+    _clips:
+    - {fileID: 8300000, guid: b0473f6769db9944ab50712af997d5e1, type: 3}
+    - {fileID: 8300000, guid: 953826adb7fdcd441b6e123512f25395, type: 3}
+    - {fileID: 8300000, guid: 80d9da4863387d940804ae3ee5b1d380, type: 3}
+  - _quality: Dirty
+    _clips:
+    - {fileID: 8300000, guid: f738e1963d5197642b03052f842d5701, type: 3}
+    - {fileID: 8300000, guid: 537ee1691a4672f44a1fe9b053dafb10, type: 3}
+    - {fileID: 8300000, guid: 5fcf28d558023e748b6523e6a545f85c, type: 3}
   _nonHints: []
+  _incorrectGuesses: []
+  _qualityPool: {fileID: 11400000, guid: be8e17dd7a7d4f3448784d9a23d26d81, type: 2}
