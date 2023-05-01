@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _qualityName: Blue
   _additionalQualityPrefab: {fileID: 0}
-  _qualityColor: {r: 0.21782663, g: 0.3007327, b: 0.8396226, a: 1}
+  _qualityColor: {r: 0.30153078, g: 0.54387826, b: 0.8301887, a: 1}
