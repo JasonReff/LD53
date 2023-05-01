@@ -4781,6 +4781,22 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1478394799147686104, guid: 4825189b58b31d24599ebdf496c25c91, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 55.189
+      objectReference: {fileID: 0}
+    - target: {fileID: 1478394799147686104, guid: 4825189b58b31d24599ebdf496c25c91, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 55.189
+      objectReference: {fileID: 0}
+    - target: {fileID: 1478394799147686104, guid: 4825189b58b31d24599ebdf496c25c91, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -27.594
+      objectReference: {fileID: 0}
+    - target: {fileID: 1478394799147686104, guid: 4825189b58b31d24599ebdf496c25c91, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 25.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2820976126834980870, guid: 4825189b58b31d24599ebdf496c25c91, type: 3}
       propertyPath: m_IsActive
       value: 0
