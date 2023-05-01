@@ -12,15 +12,10 @@ public class DeliveryManager : MonoBehaviour
     [SerializeField] private HintManager _hintManager;
     [SerializeField] private PackageRespawner _respawner;
     [SerializeField] private ScoreManager _scoreManager;
+    [SerializeField] private GameObject _gameOverCanvas;
     private List<PackageQualities> _allPackages = new List<PackageQualities>();
-    private int _currentLives;
 
     public List<PackageQualities> AllPackages { get => _allPackages; }
-
-    private void Start()
-    {
-        _currentLives = _startingLives;
-    }
 
     private void OnEnable()
     {
@@ -111,7 +106,6 @@ public class DeliveryManager : MonoBehaviour
 
     public void DeliveryFailed(Deliverable deliverable)
     {
-        LoseLife();
         _hintManager.IncorrectDelivery(deliverable.GetComponent<PackageQualities>());
         _respawner.RespawnPackage(deliverable);
     }
@@ -129,17 +123,9 @@ public class DeliveryManager : MonoBehaviour
         _spawner.OnCorrectDelivery(_allPackages);
     }
 
-    private void LoseLife()
-    {
-        _currentLives--;
-        if (_currentLives <= 0)
-        {
-            GameOver();
-        }
-    }
-
     public void GameOver()
     {
-
+        Time.timeScale = 0;
+        _gameOverCanvas.SetActive(true);
     }
 }

@@ -7,8 +7,10 @@ public class TruckMovementManager : MonoBehaviour
     [SerializeField] private Animator _truck, _house, _door;
     [SerializeField] private ScrollingImage _sidewalk, _yellowLine;
     [SerializeField] private float _animationDuration;
+    [SerializeField] private TimerManager _timer;
     public void StartTruck()
     {
+        _timer.Pause();
         _sidewalk.enabled = true;
         _yellowLine.enabled = true;
         _house.enabled = true;
@@ -18,6 +20,7 @@ public class TruckMovementManager : MonoBehaviour
 
     public void StopTruck()
     {
+        _timer.Resume();
         _sidewalk.enabled = false;
         _yellowLine.enabled = false;
         _house.enabled = false;

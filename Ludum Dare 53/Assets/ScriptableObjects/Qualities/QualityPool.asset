@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minimumAdditionalQualities: 0
   _maximumAdditionalQualities: 2
+  _limitedPool: {fileID: 11400000, guid: a13aae91f5fdcc140bdd7b04276da14f, type: 2}
   _shapes:
   - {fileID: 11400000, guid: f356c93f10f332241b84d0b9d71ec590, type: 2}
   - {fileID: 11400000, guid: 6f0a21462bc6e124a90fe3f47a299ecc, type: 2}
@@ -38,6 +39,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bc97d07814b53fd46bc50f5243189b1c, type: 2}
   - {fileID: 11400000, guid: 2c1702297025ade40a8fe8f9bc682db6, type: 2}
   - {fileID: 11400000, guid: 20bd8231ece71c44a9c46ac047fd531c, type: 2}
+  - {fileID: 11400000, guid: 3d07c5bca9b9ea14d859d123ca7a2d80, type: 2}
+  - {fileID: 11400000, guid: 0cb1d8aa11284b7419ee72f7948d96c4, type: 2}
   _wetnesses:
   - {fileID: 11400000, guid: acbe64b32d4678040a894de64b5787b5, type: 2}
   - {fileID: 11400000, guid: 4245e77b33e8bbe44972cf3a3848591d, type: 2}

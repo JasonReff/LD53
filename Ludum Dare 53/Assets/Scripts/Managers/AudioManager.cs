@@ -5,8 +5,21 @@ using UnityEngine;
 public class AudioManager : SingletonMonobehaviour<AudioManager>
 {
     [SerializeField] private AudioSource _music, _effects, _voice;
-    [SerializeField] private float _masterVolume, _musicVolume, _effectsVolume;
+    private static float _masterVolume = 1, _musicVolume = 0.5f, _effectsVolume = 0.5f, _voiceVolume = 0.75f;
     private static float _minPitch = 0.9f, _maxpitch = 1.1f;
+
+    private void Start()
+    {
+        _music.volume = _musicVolume;
+        _effects.volume = _effectsVolume;
+        _voice.volume = _voiceVolume;
+    }
+
+    public static void PlayMusic(AudioClip song)
+    {
+        Instance._music.clip = song;
+        Instance._music.Play();
+    }
 
     public static void PlaySoundEffect(AudioClip audioClip)
     {
@@ -17,7 +30,8 @@ public class AudioManager : SingletonMonobehaviour<AudioManager>
 
     public static void PlayVoiceLine(AudioClip clip)
     {
-        Instance._voice.PlayOneShot(clip);
+        Instance._voice.clip = clip;
+        Instance._voice.Play();
     }
 
     public static void LoopSoundEffect(AudioClip audioClip)
@@ -35,35 +49,45 @@ public class AudioManager : SingletonMonobehaviour<AudioManager>
 
     public static void SetMusicVolume(float volume)
     {
-        Instance._musicVolume = volume;
-        Instance._music.volume = volume * Instance._masterVolume;
+        _musicVolume = volume;
+        Instance._music.volume = volume * _masterVolume;
     }
 
     public static void SetEffectsVolume(float volume)
     {
-        Instance._effectsVolume = volume;
-        Instance._effects.volume = volume * Instance._masterVolume;
+        _effectsVolume = volume;
+        Instance._effects.volume = volume * _masterVolume;
     }
 
+    public static void SetVoicesVolume(float volume)
+    {
+        _voiceVolume = volume;
+        Instance._voice.volume = volume * _masterVolume;
+    }
     public static void SetMasterVolume(float volume)
     {
-        Instance._masterVolume = volume;
-        SetEffectsVolume(Instance._effectsVolume);
-        SetMusicVolume(Instance._musicVolume);
+        _masterVolume = volume;
+        SetEffectsVolume(_effectsVolume);
+        SetMusicVolume(_musicVolume);
     }
 
     public static float MusicVolume()
     {
-        return Instance._musicVolume;
+        return _musicVolume;
     }
 
     public static float EffectsVolume()
     {
-        return Instance._effectsVolume;
+        return _effectsVolume;
+    }
+
+    public static float VoiceVolume()
+    {
+        return _voiceVolume;
     }
 
     public static float MasterVolume()
     {
-        return Instance._masterVolume;
+        return _masterVolume;
     }
 }
