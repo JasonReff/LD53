@@ -11,8 +11,9 @@ public class PackageSpawner : MonoBehaviour
     [SerializeField] private int _minimumLoad = 5, _maximumLoad = 9;
     [SerializeField] private int _maximumPerLayer = 5;
     [SerializeField] private TruckDoorMover _doorMover;
-    [SerializeField] private float _preSpawnDelay, _postSpawnDelay;
+    [SerializeField] private float _preSpawnDelay, _postSpawnDelay, _doorClose = 1;
     [SerializeField] private HintManager _hintManager;
+    [SerializeField] private TruckMovementManager _truckMovement;
     private void Start()
     {
         SpawnPackages();
@@ -50,7 +51,8 @@ public class PackageSpawner : MonoBehaviour
             yield return StartCoroutine(_hintManager.CorrectDelivery());
             _doorMover.MoveDoorDown();
             _hintManager.MoveCharacterDown();
-            yield return new WaitForSeconds(_preSpawnDelay);
+            yield return new WaitForSeconds(_doorClose);
+            yield return _truckMovement.GoToNextHouse();
             for (int i = 0; i < remainingPackages.Count; i++)
             {
                 Destroy(remainingPackages[i].transform.gameObject);

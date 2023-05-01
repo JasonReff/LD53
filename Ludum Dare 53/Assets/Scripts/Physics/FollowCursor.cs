@@ -22,6 +22,8 @@ public class FollowCursor : MonoBehaviour
         _targetJoint2D.anchor = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         _package.OnClick();
         _deliverable.IsDragged = true;
+        foreach (var particles in GetComponentsInChildren<ControlParticles>())
+            particles.OnClick();
         BringToFront();
     }
 
@@ -43,6 +45,8 @@ public class FollowCursor : MonoBehaviour
         _rigidbody.AddForce(Vector2.ClampMagnitude(_velocity, _maxForce));
         _package.OnUnclick();
         _deliverable.OnUnclick();
+        foreach (var particles in GetComponentsInChildren<ControlParticles>())
+            particles.OnUnclick();
         BringToLayer(3);
     }
 

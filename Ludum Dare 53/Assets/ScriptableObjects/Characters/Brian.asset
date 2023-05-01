@@ -138,7 +138,10 @@ MonoBehaviour:
     - {fileID: 8300000, guid: a0aa793a71a49784fbfc049e8028adfb, type: 3}
   - _quality: Glittery
     _qualityOverride: 
-    _clips: []
+    _clips:
+    - {fileID: 8300000, guid: ee2de21de30b53347ba38bf117c76a5f, type: 3}
+    - {fileID: 8300000, guid: d76bda3e58ff4af4c96927c56663b860, type: 3}
+    - {fileID: 8300000, guid: b85908fc5ec416940a2d403fdd77805e, type: 3}
   - _quality: Sticky
     _qualityOverride: 
     _clips:

@@ -43,15 +43,15 @@ public class HintManager : MonoBehaviour
                 GetNextHint();
             }
         }
-        if (_hurryTime <= _hurryTimer)
-        {
-            _hurryTime += Time.deltaTime;
-        }
-        else
-        {
-            SayVoiceLine(_character.HurryLines.Rand());
-            _hurryTime = 0;
-        }
+        //if (_hurryTime <= _hurryTimer)
+        //{
+        //    _hurryTime += Time.deltaTime;
+        //}
+        //else
+        //{
+        //    SayVoiceLine(_character.HurryLines.Rand());
+        //    _hurryTime = 0;
+        //}
     }
 
     public void SetQualities(Qualities qualities)
@@ -163,7 +163,7 @@ public class HintManager : MonoBehaviour
     {
         var allQualities = qualities.GetAllQualities();
         var usefulHints = _hintsGiven.Where(t => _character.GetOverride(t) == "");
-        foreach (var hint in _hintsGiven)
+        foreach (var hint in usefulHints)
             if (!allQualities.Contains(hint))
                 return false;
         return true;
