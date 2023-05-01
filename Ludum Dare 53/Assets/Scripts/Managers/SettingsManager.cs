@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class SettingsManager : MonoBehaviour
 {
     [SerializeField] private Slider _musicSlider, _effectsSlider, _voicesSlider, _masterVolumeSlider;
     [SerializeField] private List<AudioClip> _effectsClips, _voiceClips;
+    [SerializeField] private AudioMixer _voiceMixer;
 
     private void Awake()
     {
