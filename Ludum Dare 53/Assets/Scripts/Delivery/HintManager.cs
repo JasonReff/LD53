@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,10 +14,10 @@ public class HintManager : MonoBehaviour
     [SerializeField] private float _characterDown, _characterUp, _characterBob, _hintLength;
     [SerializeField] private TextMeshProUGUI _hintTextbox;
     [SerializeField] private GameObject _textbox;
-    [SerializeField] private float _hintTimer = 20f, _shakeIntensity = 10f;
+    [SerializeField] private float _hintTimer = 20f, _shakeIntensity = 10f, _hurryTimer = 15f;
     [SerializeField] private Image _speechBubble;
     private bool _isReady;
-    private float _timer = 0f;
+    private float _timer = 0f, _hurryTime = 0f;
     private List<Quality> _hintsGiven = new List<Quality>();
     private Qualities _packageQualities;
 
@@ -42,10 +43,20 @@ public class HintManager : MonoBehaviour
                 GetNextHint();
             }
         }
+        if (_hurryTime <= _hurryTimer)
+        {
+            _hurryTime += Time.deltaTime;
+        }
+        else
+        {
+            SayVoiceLine(_character.HurryLines.Rand());
+            _hurryTime = 0;
+        }
     }
 
     public void SetQualities(Qualities qualities)
     {
+        _hintsGiven.Clear();
         _packageQualities = qualities;
     }
 
@@ -71,8 +82,7 @@ public class HintManager : MonoBehaviour
         IEnumerator HintCoroutine() 
         {
             _textbox.SetActive(true);
-            _hintTextbox.text = quality.QualityName;
-            ShakeCharacter(1);
+            _hintTextbox.text = _character.GetOverride(quality);
             if (_character.GetVoiceLine(quality) != null)
             {
                 var clip = _character.GetVoiceLine(quality);
@@ -87,8 +97,8 @@ public class HintManager : MonoBehaviour
 
     private void SayVoiceLine(AudioClip clip)
     {
-        AudioManager.PlaySoundEffect(clip);
-        //ShakeCharacter(clip.length);
+        AudioManager.PlayVoiceLine(clip);
+        ShakeCharacter(clip.length);
     }
 
     public void MoveCharacterUp()
@@ -101,7 +111,6 @@ public class HintManager : MonoBehaviour
 
     public void MoveCharacterDown()
     {
-        _isReady = false;
         _hintGiver.DOLocalMoveY(_characterDown, _characterBob);
         _textbox.SetActive(false);
     }
@@ -140,9 +149,20 @@ public class HintManager : MonoBehaviour
         }
     }
 
+    public IEnumerator CorrectDelivery()
+    {
+        _isReady = false;
+        _hurryTimer = 0f;
+        _timer = 0;
+        var clip = _character.CorrectGuesses.Rand();
+        SayVoiceLine(clip);
+        yield return new WaitForSeconds(clip.length);
+    }
+
     public bool CorrectSoFar(Qualities qualities)
     {
         var allQualities = qualities.GetAllQualities();
+        var usefulHints = _hintsGiven.Where(t => _character.GetOverride(t) == "");
         foreach (var hint in _hintsGiven)
             if (!allQualities.Contains(hint))
                 return false;

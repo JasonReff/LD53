@@ -47,6 +47,7 @@ public class PackageSpawner : MonoBehaviour
 
         IEnumerator DeliveryCoroutine() 
         {
+            yield return StartCoroutine(_hintManager.CorrectDelivery());
             _doorMover.MoveDoorDown();
             _hintManager.MoveCharacterDown();
             yield return new WaitForSeconds(_preSpawnDelay);

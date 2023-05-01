@@ -17,36 +17,43 @@ MonoBehaviour:
   _speechBubbleSprite: {fileID: 21300000, guid: 16c7d5cc47ca62947a2dd154067c7938, type: 3}
   _voiceLines:
   - _quality: Circle
+    _qualityOverride: 
     _clips:
     - {fileID: 8300000, guid: d0c13a4581841b845846bbfd22291f69, type: 3}
     - {fileID: 8300000, guid: f47338b237ea12a45b65469a0073a0fe, type: 3}
     - {fileID: 8300000, guid: cc15d48de8aefc440852dcccb2f68037, type: 3}
   - _quality: Envelope
+    _qualityOverride: 
     _clips:
     - {fileID: 8300000, guid: dd3cb42d3600bcb4d9987b651a126e59, type: 3}
     - {fileID: 8300000, guid: bf42d409bb9383d4e8b57067bf22b568, type: 3}
     - {fileID: 8300000, guid: e3b2b38bf68a9bb41bb2da12ffbece6e, type: 3}
   - _quality: L-Shaped
+    _qualityOverride: 
     _clips:
     - {fileID: 8300000, guid: 83f0efdb0c320864c819b36a3379b0e7, type: 3}
     - {fileID: 8300000, guid: 3a587991939d2bb47acf9c6db71e1371, type: 3}
     - {fileID: 8300000, guid: a3e181e394b031144b6b8ae71c8e6397, type: 3}
   - _quality: Rectangle
+    _qualityOverride: 
     _clips:
     - {fileID: 8300000, guid: 6421a86e957434e4fb932a89c57da929, type: 3}
     - {fileID: 8300000, guid: ca8eaeb951ffc04408dc1a77929ed27f, type: 3}
     - {fileID: 8300000, guid: cc32028b2cf5eba4fb4bb042452e5bf9, type: 3}
   - _quality: Square
+    _qualityOverride: 
     _clips:
     - {fileID: 8300000, guid: 3b63c8adb3948084da78c37b77ea4dfb, type: 3}
     - {fileID: 8300000, guid: 24ab025d248fe0940a26123d838fd5ff, type: 3}
     - {fileID: 8300000, guid: 84ad7817e9355cd47b15979364f75221, type: 3}
   - _quality: Triangle
+    _qualityOverride: 
     _clips:
     - {fileID: 8300000, guid: ee6643722c56bb147b66e4b14c04a816, type: 3}
     - {fileID: 8300000, guid: a0bfab67aaaf1a84d8b2b2698ff4cc7c, type: 3}
     - {fileID: 8300000, guid: 9cf801cf3bc0d3e4c8e81d9356eb3c92, type: 3}
   - _quality: Blue
+    _qualityOverride: Color?
     _clips:
     - {fileID: 8300000, guid: ab898f8fe91dfa24987e0c2f9393a5fa, type: 3}
     - {fileID: 8300000, guid: 3a054d72582958b4f84bcf4b0dee6cdb, type: 3}
@@ -55,6 +62,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 689e612e0fed6d74098a688250583c61, type: 3}
     - {fileID: 8300000, guid: 8c51cc3be89a3484898fbe7158a43306, type: 3}
   - _quality: Green
+    _qualityOverride: Color?
     _clips:
     - {fileID: 8300000, guid: ab898f8fe91dfa24987e0c2f9393a5fa, type: 3}
     - {fileID: 8300000, guid: 3a054d72582958b4f84bcf4b0dee6cdb, type: 3}
@@ -63,6 +71,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 689e612e0fed6d74098a688250583c61, type: 3}
     - {fileID: 8300000, guid: 8c51cc3be89a3484898fbe7158a43306, type: 3}
   - _quality: Red
+    _qualityOverride: Color?
     _clips:
     - {fileID: 8300000, guid: ab898f8fe91dfa24987e0c2f9393a5fa, type: 3}
     - {fileID: 8300000, guid: 3a054d72582958b4f84bcf4b0dee6cdb, type: 3}
@@ -71,6 +80,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 689e612e0fed6d74098a688250583c61, type: 3}
     - {fileID: 8300000, guid: 8c51cc3be89a3484898fbe7158a43306, type: 3}
   - _quality: Brown
+    _qualityOverride: Color?
     _clips:
     - {fileID: 8300000, guid: ab898f8fe91dfa24987e0c2f9393a5fa, type: 3}
     - {fileID: 8300000, guid: 3a054d72582958b4f84bcf4b0dee6cdb, type: 3}
@@ -79,6 +89,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 689e612e0fed6d74098a688250583c61, type: 3}
     - {fileID: 8300000, guid: 8c51cc3be89a3484898fbe7158a43306, type: 3}
   - _quality: Yellow
+    _qualityOverride: Color?
     _clips:
     - {fileID: 8300000, guid: ab898f8fe91dfa24987e0c2f9393a5fa, type: 3}
     - {fileID: 8300000, guid: 3a054d72582958b4f84bcf4b0dee6cdb, type: 3}
@@ -87,81 +98,96 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 689e612e0fed6d74098a688250583c61, type: 3}
     - {fileID: 8300000, guid: 8c51cc3be89a3484898fbe7158a43306, type: 3}
   - _quality: Small
+    _qualityOverride: 
     _clips:
     - {fileID: 8300000, guid: c4bf99bbdb5b3cb4db14a2e86c0d0298, type: 3}
     - {fileID: 8300000, guid: 007ff8558f85d4743a84257a55e0aa6e, type: 3}
     - {fileID: 8300000, guid: 989117ef6d71c43439a282ad0be494f3, type: 3}
   - _quality: Large
+    _qualityOverride: 
     _clips:
     - {fileID: 8300000, guid: fa7adbc02e5d33b4c90b6283d552ff52, type: 3}
     - {fileID: 8300000, guid: a8e3bdde8d09e164ca17b67ca6a27f4b, type: 3}
     - {fileID: 8300000, guid: f994ebf9fdc643b4bb2c6f18a8f6aba2, type: 3}
   - _quality: Medium
+    _qualityOverride: 
     _clips:
     - {fileID: 8300000, guid: b77b7798c03440448b24a82bde594218, type: 3}
     - {fileID: 8300000, guid: 3f42797451180cc40b65c8798d6a33c3, type: 3}
     - {fileID: 8300000, guid: 6e3bcf7c6715eac4283f53037c1e44d7, type: 3}
   - _quality: Drenched
+    _qualityOverride: 
     _clips:
     - {fileID: 8300000, guid: a6e32eaba34cec04ebe7b2bb6c0a416d, type: 3}
     - {fileID: 8300000, guid: 8c1e929b824cce64ebe5d70b94952444, type: 3}
     - {fileID: 8300000, guid: 7bb2c359813335642a6f1bffe0a8c761, type: 3}
   - _quality: Wet
+    _qualityOverride: 
     _clips:
     - {fileID: 8300000, guid: c89a356d26a665f4baf2d3236d15e419, type: 3}
     - {fileID: 8300000, guid: d5ce4e72d061f6043a2ac567c18b6d9c, type: 3}
     - {fileID: 8300000, guid: eb19ef78fdf8d1f4e970005385b8dc53, type: 3}
   - _quality: Dry
+    _qualityOverride: 
     _clips:
     - {fileID: 8300000, guid: bc81c5a638de602439af5512a72744ff, type: 3}
     - {fileID: 8300000, guid: 22164b51aeb546b4c84efedd0622a82b, type: 3}
     - {fileID: 8300000, guid: aa6d7d2356f075d4e9fd84a0297a8b92, type: 3}
   - _quality: Glass
+    _qualityOverride: 
     _clips:
     - {fileID: 8300000, guid: 8495f930a7b5290479fcdda3fbe58a2c, type: 3}
     - {fileID: 8300000, guid: 1ee979a3d590b184286879d092efa269, type: 3}
     - {fileID: 8300000, guid: e9fa4e08f4b4bfe478f46dfa63cddc6c, type: 3}
   - _quality: Rattle
+    _qualityOverride: 
     _clips:
     - {fileID: 8300000, guid: 7a2d658bb70d6db48a3a03d01de952c2, type: 3}
     - {fileID: 8300000, guid: 84ce88a3f20f3004d85aa7d07c49cc06, type: 3}
     - {fileID: 8300000, guid: 639dde2d12786d84bbfd04329a305723, type: 3}
   - _quality: Squeak
+    _qualityOverride: 
     _clips:
     - {fileID: 8300000, guid: 774694338b50eb84290374caff6e4212, type: 3}
     - {fileID: 8300000, guid: b239bf5f34c4a6249bf0c51675402e30, type: 3}
     - {fileID: 8300000, guid: af2d46bd363bcea498075ee183621c45, type: 3}
   - _quality: Glittery
+    _qualityOverride: 
     _clips:
     - {fileID: 8300000, guid: 19cdc0b4de3d4274394398140968af90, type: 3}
     - {fileID: 8300000, guid: 93bf24857103cae4b846850de71d4eac, type: 3}
     - {fileID: 8300000, guid: c5939017d3ce4ab40bff4654e6ba760a, type: 3}
   - _quality: Sticky
+    _qualityOverride: 
     _clips:
     - {fileID: 8300000, guid: 91fd45f72414192459c6321cfea6f6cb, type: 3}
     - {fileID: 8300000, guid: fd1736aa69e56284390503935657bf18, type: 3}
     - {fileID: 8300000, guid: 9d045f688cd8aa64baac6545c4a20301, type: 3}
   - _quality: Glowing
+    _qualityOverride: 
     _clips:
     - {fileID: 8300000, guid: 60e0885b03344eb41b0527114ec39c70, type: 3}
     - {fileID: 8300000, guid: c1a03416ff100a04d84ccb6d3558801d, type: 3}
     - {fileID: 8300000, guid: 7f86e5c6db797bb45b4f7777a96937df, type: 3}
   - _quality: Smoking
+    _qualityOverride: 
     _clips:
     - {fileID: 8300000, guid: bcf75ed63a36a47448831d7c6bb35827, type: 3}
     - {fileID: 8300000, guid: 47f18f9cba655284cb3c1b4de48242a4, type: 3}
     - {fileID: 8300000, guid: e53b0a2ce97949a49a00b8e91955a7db, type: 3}
   - _quality: Translucent
+    _qualityOverride: 
     _clips:
     - {fileID: 8300000, guid: b0473f6769db9944ab50712af997d5e1, type: 3}
     - {fileID: 8300000, guid: 953826adb7fdcd441b6e123512f25395, type: 3}
     - {fileID: 8300000, guid: 80d9da4863387d940804ae3ee5b1d380, type: 3}
   - _quality: Dirty
+    _qualityOverride: 
     _clips:
     - {fileID: 8300000, guid: f738e1963d5197642b03052f842d5701, type: 3}
     - {fileID: 8300000, guid: 537ee1691a4672f44a1fe9b053dafb10, type: 3}
     - {fileID: 8300000, guid: 5fcf28d558023e748b6523e6a545f85c, type: 3}
-  _nonHints:
+  _hurryLines:
   - {fileID: 8300000, guid: d165d8586379f1d41b3474eea657b51c, type: 3}
   - {fileID: 8300000, guid: 8add9cab7f33f374ca2428e63f86eaf2, type: 3}
   - {fileID: 8300000, guid: 99288e9913d03094ea515beb2a737b82, type: 3}

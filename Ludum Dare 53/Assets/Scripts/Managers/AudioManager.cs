@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioManager : SingletonMonobehaviour<AudioManager>
 {
-    [SerializeField] private AudioSource _music, _effects;
+    [SerializeField] private AudioSource _music, _effects, _voice;
     [SerializeField] private float _masterVolume, _musicVolume, _effectsVolume;
     private static float _minPitch = 0.9f, _maxpitch = 1.1f;
 
@@ -13,6 +13,11 @@ public class AudioManager : SingletonMonobehaviour<AudioManager>
         float randomPitch = Random.Range(_minPitch, _maxpitch);
         Instance._effects.pitch = randomPitch;
         Instance._effects.PlayOneShot(audioClip);
+    }
+
+    public static void PlayVoiceLine(AudioClip clip)
+    {
+        Instance._voice.PlayOneShot(clip);
     }
 
     public static void LoopSoundEffect(AudioClip audioClip)

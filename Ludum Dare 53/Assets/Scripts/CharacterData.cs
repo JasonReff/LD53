@@ -11,13 +11,27 @@ public class CharacterData : ScriptableObject
     [SerializeField] private string _characterName;
     [SerializeField] private Sprite _characterSprite, _speechBubbleSprite;
     [SerializeField] private List<VoiceLines> _voiceLines = new List<VoiceLines>();
-    [SerializeField] private List<AudioClip> _nonHints = new List<AudioClip>(), _incorrectGuesses = new List<AudioClip>(), _correctGuesses = new List<AudioClip>();
+    [SerializeField] private List<AudioClip> _hurryLines = new List<AudioClip>(), _incorrectGuesses = new List<AudioClip>(), _correctGuesses = new List<AudioClip>();
     [SerializeField] private QualityPool _qualityPool;
 
     public Sprite CharacterSprite { get => _characterSprite; }
     public Sprite SpeechBubble { get => _speechBubbleSprite; }
     public string CharacterName { get => _characterName; }
     public List<AudioClip> IncorrectGuesses { get => _incorrectGuesses; }
+    public List<AudioClip> CorrectGuesses { get => _correctGuesses; }
+    public List<AudioClip> HurryLines { get => _hurryLines; }
+
+    public string GetOverride(Quality quality)
+    {
+        if (!_voiceLines.Any(t => t.Quality == quality.QualityName))
+            return quality.QualityName;
+        var voiceLines = _voiceLines.First(t => t.Quality == quality.QualityName);
+        if (voiceLines.Override != "")
+        {
+            return voiceLines.Override;
+        }
+        return quality.QualityName;
+    }
 
     public AudioClip GetVoiceLine(Quality quality)
     {
@@ -54,9 +68,10 @@ public class CharacterData : ScriptableObject
     [Serializable]
     public class VoiceLines
     {
-        [SerializeField] private string _quality;
+        [SerializeField] private string _quality, _qualityOverride;
         [SerializeField] private List<AudioClip> _clips;
         public string Quality { get => _quality; set => _quality = value; }
+        public string Override { get => _qualityOverride; }
         public List<AudioClip> Clips { get => _clips; set => _clips = value; }
     }
 }
