@@ -118,6 +118,7 @@ public class DeliveryManager : MonoBehaviour
 
     public bool IsCorrectPackage(Deliverable deliverable)
     {
+        //this function exists
         return deliverable.GetComponent<PackageQualities>().Qualities == _desiredPackageQualities;
     }
 
