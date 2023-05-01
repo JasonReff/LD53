@@ -5,31 +5,35 @@ using UnityEngine;
 public class PackageSpawner : MonoBehaviour
 {
     [SerializeField] private QualityPool _pool;
+    [SerializeField] private int _nonbaseQualities = 10;
     [SerializeField] private PackageQualities _packagePrefab;
     [SerializeField] private Vector2 _bottomLeftSpawningCorner, _topRightSpawningCorner;
     [SerializeField] private DeliveryManager _deliveryManager;
     [SerializeField] private int _minimumLoad = 5, _maximumLoad = 9;
     [SerializeField] private int _maximumPerLayer = 5;
     [SerializeField] private TruckDoorMover _doorMover;
-    [SerializeField] private float _preSpawnDelay, _postSpawnDelay;
+    [SerializeField] private float _preSpawnDelay, _postSpawnDelay, _doorClose = 1;
     [SerializeField] private HintManager _hintManager;
+    [SerializeField] private TruckMovementManager _truckMovement;
     private void Start()
     {
-        SpawnPackages();
+        SpawnPackages(true);
     }
 
-    public void SpawnPackages()
+    public void SpawnPackages(bool starting = false)
     {
-        StartCoroutine(SpawnCoroutine());
-
-        
+        _pool.LimitPool(_nonbaseQualities);
+        StartCoroutine(SpawnCoroutine(starting));
     }
 
-    private IEnumerator SpawnCoroutine()
+    private IEnumerator SpawnCoroutine(bool starting = false)
     {
-        _doorMover.MoveDoorDown();
-        _hintManager.MoveCharacterDown();
-        yield return new WaitForSeconds(_preSpawnDelay);
+        if (!starting)
+        {
+            _doorMover.MoveDoorDown();
+            _hintManager.MoveCharacterDown();
+            yield return new WaitForSeconds(_preSpawnDelay);
+        }
         var count = Random.Range(_minimumLoad, _maximumLoad + 1);
         for (int i = 0; i < count; i++)
         {
@@ -47,10 +51,12 @@ public class PackageSpawner : MonoBehaviour
 
         IEnumerator DeliveryCoroutine() 
         {
+            _pool.LimitPool(_nonbaseQualities);
             yield return StartCoroutine(_hintManager.CorrectDelivery());
             _doorMover.MoveDoorDown();
             _hintManager.MoveCharacterDown();
-            yield return new WaitForSeconds(_preSpawnDelay);
+            yield return new WaitForSeconds(_doorClose);
+            yield return _truckMovement.GoToNextHouse();
             for (int i = 0; i < remainingPackages.Count; i++)
             {
                 Destroy(remainingPackages[i].transform.gameObject);

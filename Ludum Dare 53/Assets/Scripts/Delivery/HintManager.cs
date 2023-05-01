@@ -16,7 +16,8 @@ public class HintManager : MonoBehaviour
     [SerializeField] private GameObject _textbox;
     [SerializeField] private float _hintTimer = 20f, _shakeIntensity = 10f, _hurryTimer = 15f;
     [SerializeField] private Image _speechBubble;
-    private bool _isReady;
+    private Coroutine _hintCoroutine;
+    private bool _isReady, _sayingHint;
     private float _timer = 0f, _hurryTime = 0f;
     private List<Quality> _hintsGiven = new List<Quality>();
     private Qualities _packageQualities;
@@ -47,10 +48,14 @@ public class HintManager : MonoBehaviour
         {
             _hurryTime += Time.deltaTime;
         }
-        else
+        else if (!_sayingHint)
         {
-            SayVoiceLine(_character.HurryLines.Rand());
-            _hurryTime = 0;
+            if (_packageQualities != null)
+            {
+                SayVoiceLine(_character.HurryLines.Rand());
+                _hurryTime = 0;
+            }
+            
         }
     }
 
@@ -60,10 +65,20 @@ public class HintManager : MonoBehaviour
         _packageQualities = qualities;
     }
 
-    public void GetNextHint()
+    public void GetNextHint(PackageQualities incorrectPackage = null)
     {
         _timer = 0f;
         var hints = GetRemainingHints();
+        if (incorrectPackage != null)
+        {
+            var differentHints = new List<Quality>(hints);
+            foreach (var quality in incorrectPackage.Qualities.GetAllQualities())
+                differentHints.Remove(quality);
+            if (differentHints.Count > 0)
+            {
+                hints = differentHints;
+            }
+        }
         if (hints.Count == 0)
         {
             _hintsGiven.Clear();
@@ -76,19 +91,23 @@ public class HintManager : MonoBehaviour
 
     public void DisplayHint(Quality quality)
     {
-        StartCoroutine(HintCoroutine());
+        if (_hintCoroutine != null)
+            StopCoroutine(_hintCoroutine);
+        _hintCoroutine = StartCoroutine(HintCoroutine());
 
 
         IEnumerator HintCoroutine() 
         {
             _textbox.SetActive(true);
             _hintTextbox.text = _character.GetOverride(quality);
+            _sayingHint = true;
             if (_character.GetVoiceLine(quality) != null)
             {
                 var clip = _character.GetVoiceLine(quality);
                 SayVoiceLine(clip);
             }
             yield return new WaitForSeconds(_hintLength);
+            _sayingHint = false;
             _hintTextbox.text = "";
             _textbox.SetActive(false);
         }
@@ -103,14 +122,17 @@ public class HintManager : MonoBehaviour
 
     public void MoveCharacterUp()
     {
-        _isReady = true;
         _timer = _hintTimer - 2f;
+        _hurryTime = 0f;
+        _isReady = true;
         _textbox.SetActive(false);
         _hintGiver.DOLocalMoveY(_characterUp, _characterBob);
     }
 
     public void MoveCharacterDown()
     {
+        _hintTextbox.text = "";
+        _textbox.SetActive(false);
         _hintGiver.DOLocalMoveY(_characterDown, _characterBob);
         _textbox.SetActive(false);
     }
@@ -139,7 +161,7 @@ public class HintManager : MonoBehaviour
     {
         if (CorrectSoFar(package.Qualities))
         {
-            GetNextHint();
+            GetNextHint(package);
         }
         else
         {
@@ -152,7 +174,7 @@ public class HintManager : MonoBehaviour
     public IEnumerator CorrectDelivery()
     {
         _isReady = false;
-        _hurryTimer = 0f;
+        _hurryTime = 0f;
         _timer = 0;
         var clip = _character.CorrectGuesses.Rand();
         SayVoiceLine(clip);
@@ -162,8 +184,8 @@ public class HintManager : MonoBehaviour
     public bool CorrectSoFar(Qualities qualities)
     {
         var allQualities = qualities.GetAllQualities();
-        var usefulHints = _hintsGiven.Where(t => _character.GetOverride(t) == "");
-        foreach (var hint in _hintsGiven)
+        var usefulHints = _hintsGiven.Where(t => _character.GetOverride(t) == t.QualityName).ToList();
+        foreach (var hint in usefulHints)
             if (!allQualities.Contains(hint))
                 return false;
         return true;

@@ -9,9 +9,12 @@ public class TimerManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _timerTextbox;
     [SerializeField] private float _timer = 120;
     private bool _gameEnded;
+    private bool _paused;
 
     private void Update()
     {
+        if (_paused)
+            return;
         if (_timer <= 0 && _gameEnded == false)
         {
             _gameEnded = true;
@@ -20,6 +23,16 @@ public class TimerManager : MonoBehaviour
         }
         _timer -= Time.deltaTime;
         _timerTextbox.text = TimeToString();
+    }
+
+    public void Pause()
+    {
+        _paused = true;
+    }
+
+    public void Resume()
+    {
+        _paused = false;
     }
 
     private string TimeToString()
@@ -33,5 +46,10 @@ public class TimerManager : MonoBehaviour
         if (seconds < 10)
             secondsString = secondsString.Insert(0, "0");
         return $"{minutesString}:{secondsString}";
+    }
+
+    public void LoseTime(float seconds)
+    {
+        _timer -= seconds;
     }
 }
