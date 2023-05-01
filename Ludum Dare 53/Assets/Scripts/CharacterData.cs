@@ -43,7 +43,7 @@ public class CharacterData : ScriptableObject
         var line = voiceLines.Clips.Rand();
         return line;
     }
-
+#if UNITY_EDITOR
     public void GetVoiceLines()
     {
         _voiceLines.Clear();
@@ -64,6 +64,7 @@ public class CharacterData : ScriptableObject
             _voiceLines.Add(voiceLines);
         }
     }
+#endif
 
     [Serializable]
     public class VoiceLines
