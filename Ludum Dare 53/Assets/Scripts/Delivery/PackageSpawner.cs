@@ -15,6 +15,7 @@ public class PackageSpawner : MonoBehaviour
     [SerializeField] private float _preSpawnDelay, _postSpawnDelay, _doorClose = 1;
     [SerializeField] private HintManager _hintManager;
     [SerializeField] private TruckMovementManager _truckMovement;
+    [SerializeField] private TimerManager _timer;
     private void Start()
     {
         SpawnPackages(true);
@@ -43,6 +44,8 @@ public class PackageSpawner : MonoBehaviour
         _doorMover.MoveDoorUp();
         _deliveryManager.SetDesiredQualities();
         _hintManager.MoveCharacterUp();
+        yield return new WaitForSeconds(2f);
+        _timer.Resume();
     }
 
     public void OnCorrectDelivery(List<PackageQualities> remainingPackages)
@@ -51,6 +54,7 @@ public class PackageSpawner : MonoBehaviour
 
         IEnumerator DeliveryCoroutine() 
         {
+            _timer.Pause();
             _pool.LimitPool(_nonbaseQualities);
             yield return StartCoroutine(_hintManager.CorrectDelivery());
             _doorMover.MoveDoorDown();
@@ -71,7 +75,8 @@ public class PackageSpawner : MonoBehaviour
             _doorMover.MoveDoorUp();
             _hintManager.MoveCharacterUp();
             _deliveryManager.SetDesiredQualities();
-
+            yield return new WaitForSeconds(2f);
+            _timer.Resume();
         }
     }
 

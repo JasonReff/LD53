@@ -3177,7 +3177,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00:00
+  m_text: 02:00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 563758112fd5a6c4db0b8b22ccf0fd4f, type: 2}
   m_sharedMaterial: {fileID: -4907153124517751107, guid: 563758112fd5a6c4db0b8b22ccf0fd4f, type: 2}
@@ -3186,8 +3186,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4279769307
+  m_fontColor: {r: 0.8584906, g: 0.09313814, b: 0.09313814, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3669,6 +3669,10 @@ PrefabInstance:
       propertyPath: _delay
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3480851419667603872, guid: 390115bd350e51740b3168b2f619e899, type: 3}
+      propertyPath: _timer
+      value: 
+      objectReference: {fileID: 1777216955}
     - target: {fileID: 3480851419667603872, guid: 390115bd350e51740b3168b2f619e899, type: 3}
       propertyPath: _doorClose
       value: 1
@@ -4809,6 +4813,10 @@ PrefabInstance:
       propertyPath: _characterUp
       value: -235
       objectReference: {fileID: 0}
+    - target: {fileID: 3649894595290811321, guid: 4825189b58b31d24599ebdf496c25c91, type: 3}
+      propertyPath: _timerManager
+      value: 
+      objectReference: {fileID: 1777216955}
     - target: {fileID: 3649894595290811321, guid: 4825189b58b31d24599ebdf496c25c91, type: 3}
       propertyPath: _characterDown
       value: -900
