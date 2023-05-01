@@ -112,6 +112,7 @@ public class DeliveryManager : MonoBehaviour
     public void DeliveryFailed(Deliverable deliverable)
     {
         LoseLife();
+        _hintManager.IncorrectDelivery(deliverable.GetComponent<PackageQualities>());
         _respawner.RespawnPackage(deliverable);
     }
 

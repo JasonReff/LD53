@@ -135,7 +135,8 @@ public class HintManager : MonoBehaviour
         else
         {
             _timer = 0f;
-            SayVoiceLine(_character.IncorrectGuesses.Rand());
+            if (_character.IncorrectGuesses.Count > 0)
+                SayVoiceLine(_character.IncorrectGuesses.Rand());
         }
     }
 

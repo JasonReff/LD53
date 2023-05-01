@@ -17,3 +17,7 @@ MonoBehaviour:
   _speechBubbleSprite: {fileID: 21300000, guid: de86a3edc6945ec44baffcea38366a2d, type: 3}
   _voiceLines: []
   _nonHints: []
+  _incorrectGuesses:
+  - {fileID: 8300000, guid: a3d17ec1f17dd36438bea139fe1bc34d, type: 3}
+  - {fileID: 8300000, guid: 491ce73e03d307f489b44fac034e3b72, type: 3}
+  - {fileID: 8300000, guid: 050195aa2265ce54a992775b4e215560, type: 3}
