@@ -7,13 +7,13 @@ public class SettingsManager : MonoBehaviour
 {
     [SerializeField] private Slider _musicSlider, _effectsSlider, _voicesSlider, _masterVolumeSlider;
     [SerializeField] private List<AudioClip> _effectsClips, _voiceClips;
-    [SerializeField] private AudioMixer _voiceMixer;
 
     private void Awake()
     {
         _musicSlider.value = AudioManager.MusicVolume();
         _effectsSlider.value = AudioManager.EffectsVolume();
         _voicesSlider.value = AudioManager.VoiceVolume();
+        _masterVolumeSlider.value = AudioManager.MasterVolume();
     }
 
     public void SetMusicVolume(float value)
