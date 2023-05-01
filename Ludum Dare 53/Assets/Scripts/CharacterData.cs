@@ -11,7 +11,7 @@ public class CharacterData : ScriptableObject
     [SerializeField] private string _characterName;
     [SerializeField] private Sprite _characterSprite, _speechBubbleSprite;
     [SerializeField] private List<VoiceLines> _voiceLines = new List<VoiceLines>();
-    [SerializeField] private List<AudioClip> _nonHints = new List<AudioClip>(), _incorrectGuesses = new List<AudioClip>();
+    [SerializeField] private List<AudioClip> _nonHints = new List<AudioClip>(), _incorrectGuesses = new List<AudioClip>(), _correctGuesses = new List<AudioClip>();
     [SerializeField] private QualityPool _qualityPool;
 
     public Sprite CharacterSprite { get => _characterSprite; }
