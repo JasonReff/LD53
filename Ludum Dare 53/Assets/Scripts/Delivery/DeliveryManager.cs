@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class DeliveryManager : MonoBehaviour
 {
@@ -10,10 +11,10 @@ public class DeliveryManager : MonoBehaviour
     [SerializeField] private int _barcodeLength = 10, _barcodeAlterations = 3;
     [SerializeField] private TextMeshProUGUI _desiredBarcode, _selectedBarcode;
     [SerializeField] private HintManager _hintManager;
-    [SerializeField] private PackageRespawner _respawner;
-    [SerializeField] private ScoreManager _scoreManager;
+    [SerializeField] private int _layerThreeMax = 12;
     private List<PackageQualities> _allPackages = new List<PackageQualities>();
     private int _currentLives;
+    private int _points;
 
     public List<PackageQualities> AllPackages { get => _allPackages; }
 
@@ -88,42 +89,30 @@ public class DeliveryManager : MonoBehaviour
         _selectedBarcode.text = "";
     }
 
-    public void OnDelivery(Deliverable deliverable)
+    private void OnDelivery(Deliverable deliverable)
     {
         if (deliverable.TryGetComponent(out PackageQualities package))
         {
+            _allPackages.Remove(package);
             ComparePackage(deliverable);
         }
     }
 
     private void ComparePackage(Deliverable deliverable)
     {
-        if (IsCorrectPackage(deliverable))
+        if (deliverable.GetComponent<PackageQualities>().Qualities == _desiredPackageQualities)
         {
-            _allPackages.Remove(deliverable.GetComponent<PackageQualities>());
             DeliverySuccessful(deliverable);
         }
         else
         {
-            DeliveryFailed(deliverable);
+            LoseLife();
         }
-    }
-
-    public void DeliveryFailed(Deliverable deliverable)
-    {
-        LoseLife();
-        _hintManager.IncorrectDelivery(deliverable.GetComponent<PackageQualities>());
-        _respawner.RespawnPackage(deliverable);
-    }
-
-    public bool IsCorrectPackage(Deliverable deliverable)
-    {
-        return deliverable.GetComponent<PackageQualities>().Qualities == _desiredPackageQualities;
     }
 
     private void DeliverySuccessful(Deliverable deliverable)
     {
-        _scoreManager.OnPackageDelivered();
+        _points += deliverable.Points;
         _desiredPackageQualities = null;
         _spawner.OnCorrectDelivery(_allPackages);
     }
@@ -137,7 +126,7 @@ public class DeliveryManager : MonoBehaviour
         }
     }
 
-    public void GameOver()
+    private void GameOver()
     {
 
     }
