@@ -17,33 +17,75 @@ MonoBehaviour:
   _speechBubbleSprite: {fileID: 21300000, guid: 16c7d5cc47ca62947a2dd154067c7938, type: 3}
   _voiceLines:
   - _quality: Circle
-    _clips: []
+    _clips:
+    - {fileID: 8300000, guid: d0c13a4581841b845846bbfd22291f69, type: 3}
+    - {fileID: 8300000, guid: f47338b237ea12a45b65469a0073a0fe, type: 3}
+    - {fileID: 8300000, guid: cc15d48de8aefc440852dcccb2f68037, type: 3}
   - _quality: Envelope
     _clips:
     - {fileID: 8300000, guid: dd3cb42d3600bcb4d9987b651a126e59, type: 3}
     - {fileID: 8300000, guid: bf42d409bb9383d4e8b57067bf22b568, type: 3}
     - {fileID: 8300000, guid: e3b2b38bf68a9bb41bb2da12ffbece6e, type: 3}
   - _quality: L-Shaped
-    _clips: []
+    _clips:
+    - {fileID: 8300000, guid: 83f0efdb0c320864c819b36a3379b0e7, type: 3}
+    - {fileID: 8300000, guid: 3a587991939d2bb47acf9c6db71e1371, type: 3}
+    - {fileID: 8300000, guid: a3e181e394b031144b6b8ae71c8e6397, type: 3}
   - _quality: Rectangle
     _clips:
     - {fileID: 8300000, guid: 6421a86e957434e4fb932a89c57da929, type: 3}
     - {fileID: 8300000, guid: ca8eaeb951ffc04408dc1a77929ed27f, type: 3}
     - {fileID: 8300000, guid: cc32028b2cf5eba4fb4bb042452e5bf9, type: 3}
   - _quality: Square
-    _clips: []
+    _clips:
+    - {fileID: 8300000, guid: 3b63c8adb3948084da78c37b77ea4dfb, type: 3}
+    - {fileID: 8300000, guid: 24ab025d248fe0940a26123d838fd5ff, type: 3}
+    - {fileID: 8300000, guid: 84ad7817e9355cd47b15979364f75221, type: 3}
   - _quality: Triangle
-    _clips: []
+    _clips:
+    - {fileID: 8300000, guid: ee6643722c56bb147b66e4b14c04a816, type: 3}
+    - {fileID: 8300000, guid: a0bfab67aaaf1a84d8b2b2698ff4cc7c, type: 3}
+    - {fileID: 8300000, guid: 9cf801cf3bc0d3e4c8e81d9356eb3c92, type: 3}
   - _quality: Blue
-    _clips: []
+    _clips:
+    - {fileID: 8300000, guid: ab898f8fe91dfa24987e0c2f9393a5fa, type: 3}
+    - {fileID: 8300000, guid: 3a054d72582958b4f84bcf4b0dee6cdb, type: 3}
+    - {fileID: 8300000, guid: 71dc210577573514ea1503dceff60bc6, type: 3}
+    - {fileID: 8300000, guid: 81069232fb836d843820b6bd695ac2ea, type: 3}
+    - {fileID: 8300000, guid: 689e612e0fed6d74098a688250583c61, type: 3}
+    - {fileID: 8300000, guid: 8c51cc3be89a3484898fbe7158a43306, type: 3}
   - _quality: Green
-    _clips: []
+    _clips:
+    - {fileID: 8300000, guid: ab898f8fe91dfa24987e0c2f9393a5fa, type: 3}
+    - {fileID: 8300000, guid: 3a054d72582958b4f84bcf4b0dee6cdb, type: 3}
+    - {fileID: 8300000, guid: 71dc210577573514ea1503dceff60bc6, type: 3}
+    - {fileID: 8300000, guid: 81069232fb836d843820b6bd695ac2ea, type: 3}
+    - {fileID: 8300000, guid: 689e612e0fed6d74098a688250583c61, type: 3}
+    - {fileID: 8300000, guid: 8c51cc3be89a3484898fbe7158a43306, type: 3}
   - _quality: Red
-    _clips: []
+    _clips:
+    - {fileID: 8300000, guid: ab898f8fe91dfa24987e0c2f9393a5fa, type: 3}
+    - {fileID: 8300000, guid: 3a054d72582958b4f84bcf4b0dee6cdb, type: 3}
+    - {fileID: 8300000, guid: 71dc210577573514ea1503dceff60bc6, type: 3}
+    - {fileID: 8300000, guid: 81069232fb836d843820b6bd695ac2ea, type: 3}
+    - {fileID: 8300000, guid: 689e612e0fed6d74098a688250583c61, type: 3}
+    - {fileID: 8300000, guid: 8c51cc3be89a3484898fbe7158a43306, type: 3}
   - _quality: Brown
-    _clips: []
+    _clips:
+    - {fileID: 8300000, guid: ab898f8fe91dfa24987e0c2f9393a5fa, type: 3}
+    - {fileID: 8300000, guid: 3a054d72582958b4f84bcf4b0dee6cdb, type: 3}
+    - {fileID: 8300000, guid: 71dc210577573514ea1503dceff60bc6, type: 3}
+    - {fileID: 8300000, guid: 81069232fb836d843820b6bd695ac2ea, type: 3}
+    - {fileID: 8300000, guid: 689e612e0fed6d74098a688250583c61, type: 3}
+    - {fileID: 8300000, guid: 8c51cc3be89a3484898fbe7158a43306, type: 3}
   - _quality: Yellow
-    _clips: []
+    _clips:
+    - {fileID: 8300000, guid: ab898f8fe91dfa24987e0c2f9393a5fa, type: 3}
+    - {fileID: 8300000, guid: 3a054d72582958b4f84bcf4b0dee6cdb, type: 3}
+    - {fileID: 8300000, guid: 71dc210577573514ea1503dceff60bc6, type: 3}
+    - {fileID: 8300000, guid: 81069232fb836d843820b6bd695ac2ea, type: 3}
+    - {fileID: 8300000, guid: 689e612e0fed6d74098a688250583c61, type: 3}
+    - {fileID: 8300000, guid: 8c51cc3be89a3484898fbe7158a43306, type: 3}
   - _quality: Small
     _clips:
     - {fileID: 8300000, guid: c4bf99bbdb5b3cb4db14a2e86c0d0298, type: 3}
@@ -62,10 +104,13 @@ MonoBehaviour:
   - _quality: Drenched
     _clips:
     - {fileID: 8300000, guid: a6e32eaba34cec04ebe7b2bb6c0a416d, type: 3}
+    - {fileID: 8300000, guid: 8c1e929b824cce64ebe5d70b94952444, type: 3}
+    - {fileID: 8300000, guid: 7bb2c359813335642a6f1bffe0a8c761, type: 3}
   - _quality: Wet
     _clips:
-    - {fileID: 8300000, guid: 8c1e929b824cce64ebe5d70b94952444, type: 3}
+    - {fileID: 8300000, guid: c89a356d26a665f4baf2d3236d15e419, type: 3}
     - {fileID: 8300000, guid: d5ce4e72d061f6043a2ac567c18b6d9c, type: 3}
+    - {fileID: 8300000, guid: eb19ef78fdf8d1f4e970005385b8dc53, type: 3}
   - _quality: Dry
     _clips:
     - {fileID: 8300000, guid: bc81c5a638de602439af5512a72744ff, type: 3}
@@ -87,16 +132,25 @@ MonoBehaviour:
     - {fileID: 8300000, guid: b239bf5f34c4a6249bf0c51675402e30, type: 3}
     - {fileID: 8300000, guid: af2d46bd363bcea498075ee183621c45, type: 3}
   - _quality: Glittery
-    _clips: []
+    _clips:
+    - {fileID: 8300000, guid: 19cdc0b4de3d4274394398140968af90, type: 3}
+    - {fileID: 8300000, guid: 93bf24857103cae4b846850de71d4eac, type: 3}
+    - {fileID: 8300000, guid: c5939017d3ce4ab40bff4654e6ba760a, type: 3}
   - _quality: Sticky
     _clips:
     - {fileID: 8300000, guid: 91fd45f72414192459c6321cfea6f6cb, type: 3}
     - {fileID: 8300000, guid: fd1736aa69e56284390503935657bf18, type: 3}
     - {fileID: 8300000, guid: 9d045f688cd8aa64baac6545c4a20301, type: 3}
   - _quality: Glowing
-    _clips: []
+    _clips:
+    - {fileID: 8300000, guid: 60e0885b03344eb41b0527114ec39c70, type: 3}
+    - {fileID: 8300000, guid: c1a03416ff100a04d84ccb6d3558801d, type: 3}
+    - {fileID: 8300000, guid: 7f86e5c6db797bb45b4f7777a96937df, type: 3}
   - _quality: Smoking
-    _clips: []
+    _clips:
+    - {fileID: 8300000, guid: bcf75ed63a36a47448831d7c6bb35827, type: 3}
+    - {fileID: 8300000, guid: 47f18f9cba655284cb3c1b4de48242a4, type: 3}
+    - {fileID: 8300000, guid: e53b0a2ce97949a49a00b8e91955a7db, type: 3}
   - _quality: Translucent
     _clips:
     - {fileID: 8300000, guid: b0473f6769db9944ab50712af997d5e1, type: 3}
@@ -107,6 +161,26 @@ MonoBehaviour:
     - {fileID: 8300000, guid: f738e1963d5197642b03052f842d5701, type: 3}
     - {fileID: 8300000, guid: 537ee1691a4672f44a1fe9b053dafb10, type: 3}
     - {fileID: 8300000, guid: 5fcf28d558023e748b6523e6a545f85c, type: 3}
-  _nonHints: []
-  _incorrectGuesses: []
+  _nonHints:
+  - {fileID: 8300000, guid: d165d8586379f1d41b3474eea657b51c, type: 3}
+  - {fileID: 8300000, guid: 8add9cab7f33f374ca2428e63f86eaf2, type: 3}
+  - {fileID: 8300000, guid: 99288e9913d03094ea515beb2a737b82, type: 3}
+  - {fileID: 8300000, guid: dc474f7f922b41249a0e267ea0ede2d8, type: 3}
+  - {fileID: 8300000, guid: 22337c5154f73254f8684a1e4d3e7a55, type: 3}
+  - {fileID: 8300000, guid: 8cb97bb9919b2dd4c8143d6aca755966, type: 3}
+  _incorrectGuesses:
+  - {fileID: 8300000, guid: d7985d8ed18ab4742937bc1c6824ea2c, type: 3}
+  - {fileID: 8300000, guid: fefda95c04bd31a4997160ff26232ecb, type: 3}
+  - {fileID: 8300000, guid: b4441f63ee3b9164eb4dd2ee10883939, type: 3}
+  - {fileID: 8300000, guid: 9f3d1323852e2b74fac98391582eef66, type: 3}
+  - {fileID: 8300000, guid: 1d1f06b00ab09a741b5a399539170efa, type: 3}
+  - {fileID: 8300000, guid: 36402acf34d95a14ea037830f32647f8, type: 3}
+  - {fileID: 8300000, guid: c308a1877df7b2f4596e9c8617b5586c, type: 3}
+  _correctGuesses:
+  - {fileID: 8300000, guid: 2b87a039f921cd74888f128101e523b3, type: 3}
+  - {fileID: 8300000, guid: 3673445e9a582304182844d4e7fe4937, type: 3}
+  - {fileID: 8300000, guid: c2d2bd7b4e2294542b08778b4deb3ec9, type: 3}
+  - {fileID: 8300000, guid: ec20df60596a51a4b8e3d1ddabf46e5c, type: 3}
+  - {fileID: 8300000, guid: 41c3abd986397b14fa95037ce9b5d2c8, type: 3}
+  - {fileID: 8300000, guid: f2fc9a22951c8254b825c03213b41d1b, type: 3}
   _qualityPool: {fileID: 11400000, guid: be8e17dd7a7d4f3448784d9a23d26d81, type: 2}
