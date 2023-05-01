@@ -16,6 +16,7 @@ public class HintManager : MonoBehaviour
     [SerializeField] private GameObject _textbox;
     [SerializeField] private float _hintTimer = 20f, _shakeIntensity = 10f, _hurryTimer = 15f;
     [SerializeField] private Image _speechBubble;
+    [SerializeField] private Animator _checkmark;
     private Coroutine _hintCoroutine;
     private bool _isReady, _sayingHint;
     private float _timer = 0f, _hurryTime = 0f;
