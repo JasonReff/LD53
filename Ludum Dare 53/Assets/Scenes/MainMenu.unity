@@ -8681,7 +8681,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fb6a9799d3ca9ed409a30e64e62c9250, type: 3}
   - {fileID: 8300000, guid: 91fd45f72414192459c6321cfea6f6cb, type: 3}
   - {fileID: 8300000, guid: ad777d1f8b5c8c14db65f57a4d75ad4e, type: 3}
-  _voiceMixer: {fileID: 0}
 --- !u!4 &2140888090
 Transform:
   m_ObjectHideFlags: 0
