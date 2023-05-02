@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
     [SerializeField] private ScoreKeeper _scoreKeeper;
     [SerializeField] private int _score = 0, _highScore = 0;
-    [SerializeField] private TextMeshProUGUI _scoreTextbox, _highScoreTextbox;
+    [SerializeField] private TextMeshProUGUI _scoreTextbox, _highScoreTextbox, _endScoreTextbox, _endHighScore;
 
     private void Start()
     {
@@ -28,6 +28,10 @@ public class ScoreManager : MonoBehaviour
             _highScore = _score;
             _scoreKeeper.SetHighScore(_highScore);
         }
+        _endScoreTextbox.text = $"Delivered: {_score}";
+        _endHighScore.text = $"Record: {_highScore}";
     }
+
+
 
 }
