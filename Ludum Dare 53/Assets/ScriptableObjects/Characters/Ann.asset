@@ -15,7 +15,202 @@ MonoBehaviour:
   _characterName: Ann
   _characterSprite: {fileID: 731088474, guid: bbec1c5f651354c4babeb1dfc30e9682, type: 3}
   _speechBubbleSprite: {fileID: 21300000, guid: b6c82b8bdb298154998210eba7b1216f, type: 3}
-  _voiceLines: []
-  _nonHints: []
-  _incorrectGuesses: []
+  _voiceLines:
+  - _quality: Circle
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: e7b77cc229da0ad4eb8fc29ddb2191f7, type: 3}
+    - {fileID: 8300000, guid: 3e24a8868fefa854e8eef56614a21a77, type: 3}
+    - {fileID: 8300000, guid: c796ac332b00e604c95c71ab5150c2db, type: 3}
+  - _quality: Envelope
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: a660a929cf73ebb4db2889b54c36d7ab, type: 3}
+    - {fileID: 8300000, guid: bde3c58471a73864e91f6c16680f3bfd, type: 3}
+    - {fileID: 8300000, guid: c28bd93ead737f94198f34ba47fcca19, type: 3}
+  - _quality: L-Shaped
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: 2a814d6c116fcb045b71ae92ada16462, type: 3}
+    - {fileID: 8300000, guid: 03c4c298413f9ac4ab15213e631f7b0b, type: 3}
+    - {fileID: 8300000, guid: 8fff125a77ab4f24680005086ff73536, type: 3}
+  - _quality: Rectangle
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: 82863c7c693462a48baf39b1b8a0a2ed, type: 3}
+    - {fileID: 8300000, guid: e5cbc455b7ce7de42a7a8fc51fa6f8f5, type: 3}
+    - {fileID: 8300000, guid: 1a64d7ecf1246684eaf4dc87089381e4, type: 3}
+  - _quality: Square
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: 98e5ded0ef49f9e478903bf0df7091eb, type: 3}
+    - {fileID: 8300000, guid: 33552740826ee5a45bcd6002111a579b, type: 3}
+    - {fileID: 8300000, guid: ec575bc7453713b4a9fbdc776fa94a39, type: 3}
+  - _quality: Triangle
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: b66d065d6206961489a1021dc760f755, type: 3}
+    - {fileID: 8300000, guid: ec3ee13e90dcec74da85af29cb82d953, type: 3}
+    - {fileID: 8300000, guid: ed1d423fbe80f32409dc06c2c992d0c8, type: 3}
+  - _quality: Blue
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: 36c2e7c160194c94082e3e18e2fffdda, type: 3}
+    - {fileID: 8300000, guid: 25a20daf717239a43a392d10f53097b3, type: 3}
+    - {fileID: 8300000, guid: e9796de81c2f67d4a943f7ac6ad0a86a, type: 3}
+  - _quality: Green
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: 8d20954ea98c10942b54c919a7d5dd0c, type: 3}
+    - {fileID: 8300000, guid: efb8e326efa32c04485a2457366a3828, type: 3}
+    - {fileID: 8300000, guid: 5f7c3f7d3c3b4d24eacf591f2189a1ae, type: 3}
+  - _quality: Red
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: 2bddb6b6da2d8ee4d9b0c79bd1f2be9b, type: 3}
+    - {fileID: 8300000, guid: 87fe7235ea7bb7e44aed6e7fb6291a0c, type: 3}
+    - {fileID: 8300000, guid: d043a7dee9240974e9f0c07990c7d9b0, type: 3}
+  - _quality: Brown
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: 507ef290bf393544a9384d5d545ac31d, type: 3}
+    - {fileID: 8300000, guid: 64c263be0a62e88439e5fd1ed22957c9, type: 3}
+    - {fileID: 8300000, guid: c581ee9f256b4f847970a8a4f960c388, type: 3}
+  - _quality: Yellow
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: 1c78b40300e6f274ba0b74d1289c3806, type: 3}
+    - {fileID: 8300000, guid: 0a842ad921edca645bf151c037ca3c2e, type: 3}
+    - {fileID: 8300000, guid: 96d6da021191edf46a9d853043ea85d5, type: 3}
+  - _quality: Small
+    _qualityOverride: Size?
+    _clips:
+    - {fileID: 8300000, guid: 05c498acd63168346999e4e6a453b9cc, type: 3}
+    - {fileID: 8300000, guid: 260fbac854ab660478b8db4f4f2f1fb9, type: 3}
+    - {fileID: 8300000, guid: cff12f8182d28364e9d129e71bae4470, type: 3}
+    - {fileID: 8300000, guid: 9b5d7815217ad7446882bc0ae95609e0, type: 3}
+  - _quality: Large
+    _qualityOverride: Size?
+    _clips:
+    - {fileID: 8300000, guid: 05c498acd63168346999e4e6a453b9cc, type: 3}
+    - {fileID: 8300000, guid: 260fbac854ab660478b8db4f4f2f1fb9, type: 3}
+    - {fileID: 8300000, guid: cff12f8182d28364e9d129e71bae4470, type: 3}
+    - {fileID: 8300000, guid: 9b5d7815217ad7446882bc0ae95609e0, type: 3}
+  - _quality: Medium
+    _qualityOverride: Size?
+    _clips:
+    - {fileID: 8300000, guid: 05c498acd63168346999e4e6a453b9cc, type: 3}
+    - {fileID: 8300000, guid: 260fbac854ab660478b8db4f4f2f1fb9, type: 3}
+    - {fileID: 8300000, guid: cff12f8182d28364e9d129e71bae4470, type: 3}
+    - {fileID: 8300000, guid: 9b5d7815217ad7446882bc0ae95609e0, type: 3}
+  - _quality: Drenched
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: 77d170269e0b249499680dd6d3f911a9, type: 3}
+    - {fileID: 8300000, guid: 2acf199f62d10c244aab357bc5808f41, type: 3}
+    - {fileID: 8300000, guid: a752ea53cf119294bbef86df998a46ce, type: 3}
+  - _quality: Wet
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: 046e64eee5b76c2408a25d038eede649, type: 3}
+    - {fileID: 8300000, guid: c07505119f6388e48a562fdd748e3ce8, type: 3}
+    - {fileID: 8300000, guid: 29eecd5b5c7118d4481f6b2194e4aca8, type: 3}
+  - _quality: Dry
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: 5900024e7b3e43a41b1dc5b1cea1c545, type: 3}
+    - {fileID: 8300000, guid: b6ba5723088756340bd16578b04ef433, type: 3}
+    - {fileID: 8300000, guid: ccdd0e8407bcc884b84137c49adc77a5, type: 3}
+  - _quality: Glass
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: a14a77840b38c8843aa53e60a0ab5560, type: 3}
+    - {fileID: 8300000, guid: 6ee721f7df926ed41b38f9efec513146, type: 3}
+    - {fileID: 8300000, guid: a43aa46df865591449270eeeaefabbd9, type: 3}
+  - _quality: Rattle
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: 5294ec5c64720be45a75e8820bc45408, type: 3}
+    - {fileID: 8300000, guid: a747db098c8afba418032bbd269efacf, type: 3}
+    - {fileID: 8300000, guid: 84de018a2007fb4458f5b21852787d9f, type: 3}
+  - _quality: Squeak
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: ccacbb1f521ae504eb1a9e6d29f525aa, type: 3}
+    - {fileID: 8300000, guid: 976f58fa57de11048b61f7210edeb818, type: 3}
+    - {fileID: 8300000, guid: 189989b62a5a6504591624aa8ca8c509, type: 3}
+  - _quality: Metal
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: 2844329218f9719478558339286df41f, type: 3}
+    - {fileID: 8300000, guid: d84eb503110bee44a854840fcfce9386, type: 3}
+    - {fileID: 8300000, guid: d2311a6ea08de0b418e57ddbdf97cb2f, type: 3}
+  - _quality: Ticking
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: 9b201852a15e7364b889d236b54bca88, type: 3}
+    - {fileID: 8300000, guid: b6055999e0912b845b2cdbed35654e6f, type: 3}
+    - {fileID: 8300000, guid: 793e3c8b3d1dd7345b12bd505a97318d, type: 3}
+  - _quality: Sloshing
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: 54baaabcdf6288840863a7afd5bec5ef, type: 3}
+    - {fileID: 8300000, guid: 24f1019499e6e6c4fbf9ccc21d8fb857, type: 3}
+    - {fileID: 8300000, guid: 5e8603e9705050f4f8e82ca8627f296e, type: 3}
+  - _quality: Glittery
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: 50a9f0c2c4f962f48a8bc82de8f510ce, type: 3}
+    - {fileID: 8300000, guid: 5a01cdf40c762434585179a27e898663, type: 3}
+    - {fileID: 8300000, guid: 24f640ff1aa5cb44ea2c097a7b8d5931, type: 3}
+  - _quality: Sticky
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: c64f3f53230503c4a8ea1a37326262ee, type: 3}
+    - {fileID: 8300000, guid: 46bd9d01f0416554ab95f05e00313e8b, type: 3}
+    - {fileID: 8300000, guid: ba9dadb928b09c84ea1758d49bcfee3a, type: 3}
+  - _quality: Glowing
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: e896b0e8c35300d49b7bc5db58d1f7a1, type: 3}
+    - {fileID: 8300000, guid: 0fd210c261c26dc458e58e559b34c167, type: 3}
+    - {fileID: 8300000, guid: d4571c4ca82e5b242ad4792ed36162a4, type: 3}
+  - _quality: Smoking
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: bdb8108a6b14460418bd1648be89a0d8, type: 3}
+    - {fileID: 8300000, guid: 43331c4ac9533384381cd736af914e69, type: 3}
+    - {fileID: 8300000, guid: 55e2f6a11717d2b44b3de04cee7273a3, type: 3}
+  - _quality: Translucent
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: a638c613c621d9647814e76e7acefbcd, type: 3}
+    - {fileID: 8300000, guid: d08f8e08b35fd5742817cb26e2499ea5, type: 3}
+    - {fileID: 8300000, guid: 6118f076c14098345ae5d58676485cf3, type: 3}
+  - _quality: Dirty
+    _qualityOverride: 
+    _clips:
+    - {fileID: 8300000, guid: d05c91dbeacc82f4288305774824f961, type: 3}
+    - {fileID: 8300000, guid: 26d85ca0cc7ea9547b947d3466d167d6, type: 3}
+    - {fileID: 8300000, guid: d953a8d865b784e45b4585321fd7070b, type: 3}
+  _hurryLines:
+  - {fileID: 8300000, guid: 801cd95d10613b54cb2c2e6add0c53c9, type: 3}
+  - {fileID: 8300000, guid: bcbd003bdd509eb4091cb3f2c269e72d, type: 3}
+  - {fileID: 8300000, guid: 4a3214b39bba643469a11b426253ddd8, type: 3}
+  - {fileID: 8300000, guid: eaf90590ff364f5418006d64f18016a2, type: 3}
+  _incorrectGuesses:
+  - {fileID: 8300000, guid: f038b1441efbc4e4ebf979f82a9749fa, type: 3}
+  - {fileID: 8300000, guid: 278582d7ec4af7845ae3bc3665154c19, type: 3}
+  - {fileID: 8300000, guid: c2627e1b1b3f4d745b36d860cc8c3b3f, type: 3}
+  - {fileID: 8300000, guid: 8e22dc87f61a05044b74b92ba81fc1bd, type: 3}
+  - {fileID: 8300000, guid: b9703149e086544489fd5af33e296423, type: 3}
+  - {fileID: 8300000, guid: 4123ef17f7897c248be87de1273eb641, type: 3}
+  - {fileID: 8300000, guid: cd1980ae975950a4fbdcea7b95e1acbc, type: 3}
+  _correctGuesses:
+  - {fileID: 8300000, guid: 442d1068ebe2a9c46bf6b34c0da83d86, type: 3}
+  - {fileID: 8300000, guid: 20fb849bc83b54c4ebc373df36f87ed3, type: 3}
+  - {fileID: 8300000, guid: 58257a959d9c26c4abcc7a5b4945a8b3, type: 3}
+  - {fileID: 8300000, guid: d4f67cb388ae0a448bfc9a409ec87527, type: 3}
+  - {fileID: 8300000, guid: acd6349e4a615bf478c51d6edfafc26e, type: 3}
+  - {fileID: 8300000, guid: 996b684655108294d8ec136f61d5d0ae, type: 3}
   _qualityPool: {fileID: 11400000, guid: be8e17dd7a7d4f3448784d9a23d26d81, type: 2}

@@ -9,7 +9,7 @@ public class TimerManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _timerTextbox;
     [SerializeField] private float _timer = 120;
     private bool _gameEnded;
-    private bool _paused;
+    private bool _paused = true;
 
     private void Update()
     {
@@ -28,11 +28,13 @@ public class TimerManager : MonoBehaviour
     public void Pause()
     {
         _paused = true;
+        _timerTextbox.color = Color.red;
     }
 
     public void Resume()
     {
         _paused = false;
+        _timerTextbox.color = Color.black;
     }
 
     private string TimeToString()
