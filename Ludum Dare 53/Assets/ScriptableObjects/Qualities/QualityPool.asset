@@ -44,7 +44,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3d07c5bca9b9ea14d859d123ca7a2d80, type: 2}
   - {fileID: 11400000, guid: 0cb1d8aa11284b7419ee72f7948d96c4, type: 2}
   - {fileID: 11400000, guid: 97a7b329c3d2a734eb33ffdc139cd5e6, type: 2}
-  _minimumWetnesses: 1
+  _minimumWetnesses: 2
   _wetnesses:
   - {fileID: 11400000, guid: acbe64b32d4678040a894de64b5787b5, type: 2}
   - {fileID: 11400000, guid: 4245e77b33e8bbe44972cf3a3848591d, type: 2}
