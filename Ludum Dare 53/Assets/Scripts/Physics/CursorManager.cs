@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class CursorManager : MonoBehaviour
 {
@@ -25,12 +27,17 @@ public class CursorManager : MonoBehaviour
 
     private void OnClick()
     {
-        RaycastHit2D hit = Physics2D.Raycast(_main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-        if (hit && hit.transform.TryGetComponent(out FollowCursor followCursor))
+        RaycastHit2D[] hits = Physics2D.RaycastAll(_main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+        if (hits.Length > 0)
         {
-            _object = followCursor;
-            followCursor.OnClick();
+            var orderedHits = hits.OrderByDescending(t => t.transform.GetComponent<SortingGroup>().sortingOrder).ToList();
+            if (orderedHits[0].transform.TryGetComponent(out FollowCursor followCursor))
+            {
+                _object = followCursor;
+                followCursor.OnClick();
+            }
         }
+        
     }
 
     private void OnDrag()
