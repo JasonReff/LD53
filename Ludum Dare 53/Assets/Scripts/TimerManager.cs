@@ -54,4 +54,10 @@ public class TimerManager : MonoBehaviour
     {
         _timer -= seconds;
     }
+
+    public void AddTime(float seconds)
+    {
+        _timer += seconds;
+        _timerTextbox.text = TimeToString();
+    }
 }

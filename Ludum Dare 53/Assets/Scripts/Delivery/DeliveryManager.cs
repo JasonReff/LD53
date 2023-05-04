@@ -116,7 +116,7 @@ public class DeliveryManager : MonoBehaviour
         return deliverable.GetComponent<PackageQualities>().Qualities == _desiredPackageQualities;
     }
 
-    private void DeliverySuccessful(Deliverable deliverable)
+    protected virtual void DeliverySuccessful(Deliverable deliverable)
     {
         _scoreManager.OnPackageDelivered();
         _desiredPackageQualities = null;

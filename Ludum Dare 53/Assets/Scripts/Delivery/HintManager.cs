@@ -8,8 +8,8 @@ using UnityEngine.UI;
 
 public class HintManager : MonoBehaviour
 {
-    [SerializeField] private CharacterData _character;
-    [SerializeField] private CharacterPool _pool;
+    [SerializeField] protected CharacterData _character;
+    [SerializeField] protected CharacterPool _pool;
     [SerializeField] private Transform _hintGiver;
     [SerializeField] private float _characterDown, _characterUp, _characterBob, _hintLength;
     [SerializeField] private TextMeshProUGUI _hintTextbox;
@@ -24,6 +24,11 @@ public class HintManager : MonoBehaviour
     private Qualities _packageQualities;
 
     private void Start()
+    {
+        GetCharacter();
+    }
+
+    protected void GetCharacter()
     {
         _character = _pool.Characters.Rand();
         GetComponent<Image>().sprite = _character.CharacterSprite;
@@ -121,7 +126,7 @@ public class HintManager : MonoBehaviour
         ShakeCharacter(clip.length);
     }
 
-    public void MoveCharacterUp()
+    public virtual void MoveCharacterUp()
     {
         _timer = _hintTimer - 2f;
         _hurryTime = 0f;
