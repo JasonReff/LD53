@@ -5,13 +5,18 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "QualityPool")]
 public class QualityPool : ScriptableObject
 {
-    [SerializeField] private int _minimumAdditionalQualities, _maximumAdditionalQualities;
     [SerializeField] private QualityPool _limitedPool;
+    [SerializeField] private int _minimumShapes;
     [SerializeField] private List<ShapeQuality> _shapes = new List<ShapeQuality>();
+    [SerializeField] private int _minimumColors;
     [SerializeField] private List<ColorQuality> _colors = new List<ColorQuality>();
+    [SerializeField] private int _minimumSizes;
     [SerializeField] private List<SizeQuality> _sizes = new List<SizeQuality>();
+    [SerializeField] private int _minimumSounds;
     [SerializeField] private List<SoundQuality> _sounds = new List<SoundQuality>();
+    [SerializeField] private int _minimumWetnesses;
     [SerializeField] private List<SlipperyQuality> _wetnesses = new List<SlipperyQuality>();
+    [SerializeField] private int _minimumAdditionalQualities, _maximumAdditionalQualities;
     [SerializeField] private List<LayeredQuality> _layeredQualities = new List<LayeredQuality>();
 
     public Qualities RandomQualities(bool limited = true)
@@ -75,22 +80,22 @@ public class QualityPool : ScriptableObject
         _sounds.Clear();
         _wetnesses.Clear();
         _layeredQualities.Clear();
-        var baseShape = parentPool._shapes.Rand();
-        var baseSize = parentPool._sizes.Rand();
-        var baseColor = parentPool._colors.Rand();
-        var baseSound = parentPool._sounds.Rand();
-        var baseWetness = parentPool._wetnesses.Rand();
-        _shapes.Add(baseShape);
-        _sizes.Add(baseSize);
-        _colors.Add(baseColor);
-        _wetnesses.Add(baseWetness);
-        _sounds.Add(baseSound);
+        var baseShapes = parentPool._shapes.Distinct().ToList().Pull(parentPool._minimumShapes);
+        var baseSizes = parentPool._sizes.Distinct().ToList().Pull(parentPool._minimumSizes);
+        var baseColors = parentPool._colors.Distinct().ToList().Pull(parentPool._minimumColors);
+        var baseSounds = parentPool._sounds.Distinct().ToList().Pull(parentPool._minimumSounds);
+        var baseWetnesses = parentPool._wetnesses.Distinct().ToList().Pull(parentPool._minimumWetnesses);
+        _shapes.AddRange(baseShapes);
+        _sizes.AddRange(baseSizes);
+        _colors.AddRange(baseColors);
+        _wetnesses.AddRange(baseWetnesses);
+        _sounds.AddRange(baseSounds);
         var allQualities = parentPool.GetAllQualities();
-        allQualities.Remove(baseShape);
-        allQualities.Remove(baseSize);
-        allQualities.Remove(baseColor);
-        allQualities.Remove(baseSound);
-        allQualities.Remove(baseWetness);
+        allQualities.RemoveAll(t => baseShapes.Contains(t));
+        allQualities.RemoveAll(t => baseSizes.Contains(t));
+        allQualities.RemoveAll(t => baseColors.Contains(t));
+        allQualities.RemoveAll(t => baseSounds.Contains(t));
+        allQualities.RemoveAll(t => baseWetnesses.Contains(t));
         for (int i = 0; i < nonBaseQualities; i++)
         {
             var randomQuality = allQualities.Rand();

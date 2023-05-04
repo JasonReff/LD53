@@ -6100,7 +6100,7 @@ PrefabInstance:
       objectReference: {fileID: 1777216953}
     - target: {fileID: 3480851419667603872, guid: 390115bd350e51740b3168b2f619e899, type: 3}
       propertyPath: _nonbaseQualities
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3480851419667603872, guid: 390115bd350e51740b3168b2f619e899, type: 3}
       propertyPath: _topRightSpawningCorner.x
