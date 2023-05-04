@@ -6322,6 +6322,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Endless
       objectReference: {fileID: 0}
+    - target: {fileID: 6224801264744222164, guid: db9166e30b37a6f42921580e1f1b5805, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6224801264744222166, guid: db9166e30b37a6f42921580e1f1b5805, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
