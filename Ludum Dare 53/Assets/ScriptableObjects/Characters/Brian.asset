@@ -22,36 +22,54 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 36d9740a0bc447b4bb06f0682eab19dd, type: 3}
     - {fileID: 8300000, guid: 78307743105a04e4ca9aa0d47820be6b, type: 3}
     - {fileID: 8300000, guid: f57971cb1070ecb47875d290c407579f, type: 3}
+    - {fileID: 8300000, guid: 6d4eddfd564344c4dadd3c17f8afc651, type: 3}
+    - {fileID: 8300000, guid: eae021b1569607642a123a037a3d63be, type: 3}
+    - {fileID: 8300000, guid: 86ab08018e367544aabf8ae9d5ba4334, type: 3}
   - _quality: Envelope
     _qualityOverride: Shape?
     _clips:
     - {fileID: 8300000, guid: 36d9740a0bc447b4bb06f0682eab19dd, type: 3}
     - {fileID: 8300000, guid: 78307743105a04e4ca9aa0d47820be6b, type: 3}
     - {fileID: 8300000, guid: f57971cb1070ecb47875d290c407579f, type: 3}
+    - {fileID: 8300000, guid: 6d4eddfd564344c4dadd3c17f8afc651, type: 3}
+    - {fileID: 8300000, guid: eae021b1569607642a123a037a3d63be, type: 3}
+    - {fileID: 8300000, guid: 86ab08018e367544aabf8ae9d5ba4334, type: 3}
   - _quality: L-Shaped
     _qualityOverride: Shape?
     _clips:
     - {fileID: 8300000, guid: 36d9740a0bc447b4bb06f0682eab19dd, type: 3}
     - {fileID: 8300000, guid: 78307743105a04e4ca9aa0d47820be6b, type: 3}
     - {fileID: 8300000, guid: f57971cb1070ecb47875d290c407579f, type: 3}
+    - {fileID: 8300000, guid: 6d4eddfd564344c4dadd3c17f8afc651, type: 3}
+    - {fileID: 8300000, guid: eae021b1569607642a123a037a3d63be, type: 3}
+    - {fileID: 8300000, guid: 86ab08018e367544aabf8ae9d5ba4334, type: 3}
   - _quality: Rectangle
     _qualityOverride: Shape?
     _clips:
     - {fileID: 8300000, guid: 36d9740a0bc447b4bb06f0682eab19dd, type: 3}
     - {fileID: 8300000, guid: 78307743105a04e4ca9aa0d47820be6b, type: 3}
     - {fileID: 8300000, guid: f57971cb1070ecb47875d290c407579f, type: 3}
+    - {fileID: 8300000, guid: 6d4eddfd564344c4dadd3c17f8afc651, type: 3}
+    - {fileID: 8300000, guid: eae021b1569607642a123a037a3d63be, type: 3}
+    - {fileID: 8300000, guid: 86ab08018e367544aabf8ae9d5ba4334, type: 3}
   - _quality: Square
     _qualityOverride: Shape?
     _clips:
     - {fileID: 8300000, guid: 36d9740a0bc447b4bb06f0682eab19dd, type: 3}
     - {fileID: 8300000, guid: 78307743105a04e4ca9aa0d47820be6b, type: 3}
     - {fileID: 8300000, guid: f57971cb1070ecb47875d290c407579f, type: 3}
+    - {fileID: 8300000, guid: 6d4eddfd564344c4dadd3c17f8afc651, type: 3}
+    - {fileID: 8300000, guid: eae021b1569607642a123a037a3d63be, type: 3}
+    - {fileID: 8300000, guid: 86ab08018e367544aabf8ae9d5ba4334, type: 3}
   - _quality: Triangle
     _qualityOverride: Shape?
     _clips:
     - {fileID: 8300000, guid: 36d9740a0bc447b4bb06f0682eab19dd, type: 3}
     - {fileID: 8300000, guid: 78307743105a04e4ca9aa0d47820be6b, type: 3}
     - {fileID: 8300000, guid: f57971cb1070ecb47875d290c407579f, type: 3}
+    - {fileID: 8300000, guid: 6d4eddfd564344c4dadd3c17f8afc651, type: 3}
+    - {fileID: 8300000, guid: eae021b1569607642a123a037a3d63be, type: 3}
+    - {fileID: 8300000, guid: 86ab08018e367544aabf8ae9d5ba4334, type: 3}
   - _quality: Blue
     _qualityOverride: 
     _clips:

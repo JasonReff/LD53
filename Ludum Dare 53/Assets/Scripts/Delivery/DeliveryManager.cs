@@ -104,7 +104,7 @@ public class DeliveryManager : MonoBehaviour
         }
     }
 
-    public void DeliveryFailed(Deliverable deliverable)
+    public virtual void DeliveryFailed(Deliverable deliverable)
     {
         _hintManager.IncorrectDelivery(deliverable.GetComponent<PackageQualities>());
         _respawner.RespawnPackage(deliverable);

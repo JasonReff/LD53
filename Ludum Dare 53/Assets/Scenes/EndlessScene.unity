@@ -8117,7 +8117,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 40
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -8213,7 +8213,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 80
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -9353,6 +9353,7 @@ MonoBehaviour:
   _gameOverCanvas: {fileID: 1091077514}
   _timer: {fileID: 1925515847}
   _timeGain: 5
+  _timeLoss: 1
   _spawnerIncreaseRate: 3
 --- !u!114 &4445157500321462921
 MonoBehaviour:

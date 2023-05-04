@@ -16,6 +16,7 @@ public class PackageSpawner : MonoBehaviour
     [SerializeField] private HintManager _hintManager;
     [SerializeField] private TruckMovementManager _truckMovement;
     [SerializeField] private TimerManager _timer;
+    private Coroutine _deliveryCoroutine;
     private void Start()
     {
         SpawnPackages(true);
@@ -56,7 +57,9 @@ public class PackageSpawner : MonoBehaviour
 
     public void OnCorrectDelivery(List<PackageQualities> remainingPackages)
     {
-        StartCoroutine(DeliveryCoroutine());
+        if (_deliveryCoroutine != null)
+            StopCoroutine(_deliveryCoroutine);
+        _deliveryCoroutine = StartCoroutine(DeliveryCoroutine());
 
         IEnumerator DeliveryCoroutine() 
         {
