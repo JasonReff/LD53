@@ -6,12 +6,12 @@ public class DeliveryManager : MonoBehaviour
 {
     [SerializeField] private Qualities _desiredPackageQualities;
     [SerializeField] private int _startingLives = 3, _minimumPackages = 3;
-    [SerializeField] private PackageSpawner _spawner;
+    [SerializeField] protected PackageSpawner _spawner;
     [SerializeField] private int _barcodeLength = 10, _barcodeAlterations = 3;
     [SerializeField] private TextMeshProUGUI _desiredBarcode, _selectedBarcode;
     [SerializeField] private HintManager _hintManager;
     [SerializeField] private PackageRespawner _respawner;
-    [SerializeField] private ScoreManager _scoreManager;
+    [SerializeField] protected ScoreManager _scoreManager;
     [SerializeField] private GameObject _gameOverCanvas;
     private List<PackageQualities> _allPackages = new List<PackageQualities>();
 

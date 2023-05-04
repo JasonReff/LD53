@@ -7245,11 +7245,11 @@ PrefabInstance:
       objectReference: {fileID: 3649894595145669687}
     - target: {fileID: 3480851419667603872, guid: 390115bd350e51740b3168b2f619e899, type: 3}
       propertyPath: _maximumLoad
-      value: 15
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3480851419667603872, guid: 390115bd350e51740b3168b2f619e899, type: 3}
       propertyPath: _minimumLoad
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3480851419667603872, guid: 390115bd350e51740b3168b2f619e899, type: 3}
       propertyPath: _preSpawnDelay
@@ -9353,6 +9353,7 @@ MonoBehaviour:
   _gameOverCanvas: {fileID: 1091077514}
   _timer: {fileID: 1925515847}
   _timeGain: 5
+  _spawnerIncreaseRate: 3
 --- !u!114 &4445157500321462921
 MonoBehaviour:
   m_ObjectHideFlags: 0

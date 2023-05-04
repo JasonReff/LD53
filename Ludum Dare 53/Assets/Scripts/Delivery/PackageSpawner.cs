@@ -27,6 +27,12 @@ public class PackageSpawner : MonoBehaviour
         StartCoroutine(SpawnCoroutine(starting));
     }
 
+    public void IncreaseSpawnCounts()
+    {
+        _minimumLoad++;
+        _maximumLoad++;
+    }
+
     private IEnumerator SpawnCoroutine(bool starting = false)
     {
         if (!starting)
