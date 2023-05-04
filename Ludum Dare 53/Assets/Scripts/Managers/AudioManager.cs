@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioManager : SingletonMonobehaviour<AudioManager>
 {
     [SerializeField] private AudioSource _music, _effects, _voice;
-    private static float _masterVolume = 0.5f, _musicVolume = 0.5f, _effectsVolume = 0.5f, _voiceVolume = 1f;
+    private static float _masterVolume = 0.75f, _musicVolume = 0.5f, _effectsVolume = 0.5f, _voiceVolume = 1f;
     private static float _minPitch = 0.9f, _maxpitch = 1.1f;
 
     private void Start()
@@ -69,6 +69,7 @@ public class AudioManager : SingletonMonobehaviour<AudioManager>
         _masterVolume = volume;
         SetEffectsVolume(_effectsVolume);
         SetMusicVolume(_musicVolume);
+        SetVoicesVolume(_voiceVolume);
     }
 
     public static float MusicVolume()
