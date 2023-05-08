@@ -6,7 +6,7 @@ using UnityEngine;
 public class TimerManager : MonoBehaviour
 {
     [SerializeField] private DeliveryManager _deliveryManager;
-    [SerializeField] private TextMeshProUGUI _timerTextbox;
+    [SerializeField] private TextMeshProUGUI _timerTextbox, _timeGainedTextbox;
     [SerializeField] private float _timer = 120;
     private bool _gameEnded;
     private bool _paused = true;
@@ -59,5 +59,14 @@ public class TimerManager : MonoBehaviour
     {
         _timer += seconds;
         _timerTextbox.text = TimeToString();
+        StartCoroutine(GreenCoroutine());
+
+        IEnumerator GreenCoroutine()
+        {
+            _timeGainedTextbox.text = $"+{seconds}";
+            _timeGainedTextbox.enabled = true;
+            yield return new WaitForSeconds(1);
+            _timeGainedTextbox.enabled = false;
+        }
     }
 }

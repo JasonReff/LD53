@@ -28,9 +28,13 @@ public class HintManager : MonoBehaviour
         GetCharacter();
     }
 
-    protected void GetCharacter()
+    protected virtual void GetCharacter()
     {
-        _character = _pool.Characters.Rand();
+        _character = _pool.CurrentCharacter;
+        if (_character == null)
+        {
+            _character = _pool.Characters.Rand();
+        }
         GetComponent<Image>().sprite = _character.CharacterSprite;
         _speechBubble.sprite = _character.SpeechBubble;
     }

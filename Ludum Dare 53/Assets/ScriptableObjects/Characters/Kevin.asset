@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f9d61891805d19498d2b8470d579b12, type: 3}
   m_Name: Kevin
   m_EditorClassIdentifier: 
-  _characterName: Kev
+  _characterName: Joey
   _characterSprite: {fileID: -1831763631, guid: bbec1c5f651354c4babeb1dfc30e9682, type: 3}
   _speechBubbleSprite: {fileID: 21300000, guid: 16c7d5cc47ca62947a2dd154067c7938, type: 3}
   _voiceLines:
