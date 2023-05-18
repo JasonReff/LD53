@@ -12,6 +12,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
+        _endScoreTextbox.text = $"Delivered: 0";
         _highScore = _scoreKeeper.HighScore;
     }
 

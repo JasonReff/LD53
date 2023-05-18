@@ -30,7 +30,9 @@ public class CursorManager : MonoBehaviour
         RaycastHit2D[] hits = Physics2D.RaycastAll(_main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
         if (hits.Length > 0)
         {
-            var orderedHits = hits.OrderByDescending(t => t.transform.GetComponent<SortingGroup>().sortingOrder).ToList();
+            var orderedHits = hits.Where(t => t.transform.GetComponent<SortingGroup>() != null).OrderByDescending(t => t.transform.GetComponent<SortingGroup>().sortingOrder).ToList();
+            if (orderedHits.Count == 0)
+                return;
             if (orderedHits[0].transform.TryGetComponent(out FollowCursor followCursor))
             {
                 _object = followCursor;
