@@ -149,7 +149,7 @@ public class HintManager : MonoBehaviour
 
     private void ShakeCharacter(float duration)
     {
-        transform.DOShakePosition(duration, _shakeIntensity);
+        transform.DOShakePosition(duration, new Vector3(_shakeIntensity, _shakeIntensity, 0));
     }
 
     private List<Quality> GetRemainingHints()

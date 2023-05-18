@@ -47,7 +47,8 @@ public class FollowCursor : MonoBehaviour
         _deliverable.OnUnclick();
         foreach (var particles in GetComponentsInChildren<ControlParticles>())
             particles.OnUnclick();
-        BringToLayer(3);
+        if (!_deliverable.Delivered)
+            BringToLayer(3);
     }
 
     private IEnumerator SeparateObjectsCoroutine()

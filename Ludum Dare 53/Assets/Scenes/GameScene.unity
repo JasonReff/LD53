@@ -8093,6 +8093,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _deliveryManager: {fileID: 1777216953}
   _timerTextbox: {fileID: 1161491459}
+  _timeGainedTextbox: {fileID: 0}
   _timer: 120
 --- !u!114 &1777216956
 MonoBehaviour:

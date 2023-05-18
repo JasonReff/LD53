@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class DeliveryZone : MonoBehaviour
@@ -59,9 +60,11 @@ public class DeliveryZone : MonoBehaviour
             grabbable.enabled = false;
             var rigidbody = _deliveredPackage.GetComponent<Rigidbody2D>();
             rigidbody.bodyType = RigidbodyType2D.Static;
+            var sortingGroup = _deliveredPackage.GetComponent<SortingGroup>();
             _deliveredPackage.enabled = false;
             _deliveredPackage.transform.parent = transform;
             _deliveredPackage.transform.localPosition = _packagePivot;
+            sortingGroup.sortingOrder = 5;
             yield return new WaitForSeconds(_characterDownTime);
             Destroy(_deliveredPackage.gameObject);
             _deliveredPackage = null;

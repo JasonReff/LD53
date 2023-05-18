@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Henry
   m_EditorClassIdentifier: 
   _characterName: Henry
-  _characterSprite: {fileID: -937533402, guid: bbec1c5f651354c4babeb1dfc30e9682, type: 3}
+  _characterSprite: {fileID: 505334348, guid: a03d00fd3cb0a2345a5447bddccebf66, type: 3}
   _speechBubbleSprite: {fileID: 21300000, guid: 9aa3291c6e8baa2409506f5561cf6dd9, type: 3}
   _voiceLines:
   - _quality: Circle
