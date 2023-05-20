@@ -11373,9 +11373,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c6013bf1aff71b7478cced86d5b77638, type: 3}
   - {fileID: 8300000, guid: 239b2795fccd13c48ad8ce27966a4024, type: 3}
   _voiceClips:
-  - {fileID: 8300000, guid: fb6a9799d3ca9ed409a30e64e62c9250, type: 3}
-  - {fileID: 8300000, guid: 91fd45f72414192459c6321cfea6f6cb, type: 3}
-  - {fileID: 8300000, guid: ad777d1f8b5c8c14db65f57a4d75ad4e, type: 3}
+  - {fileID: 8300000, guid: 1261c52538259c54d938870770ea6df2, type: 3}
+  - {fileID: 8300000, guid: 5d42c6ee4b89eca4d8b6577a7627b351, type: 3}
 --- !u!4 &2140888090
 Transform:
   m_ObjectHideFlags: 0
