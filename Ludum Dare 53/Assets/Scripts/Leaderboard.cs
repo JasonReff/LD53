@@ -13,7 +13,7 @@ public class Leaderboard : MonoBehaviour
     [SerializeField] private TMP_InputField _usernameInput;
     [SerializeField] private List<TextMeshProUGUI> _entryFields;
     [SerializeField] private ScoreManager _scoreManager;
-    [SerializeField] private GameObject _input;
+    [SerializeField] private GameObject _input, _submitting;
 
 
 
@@ -45,6 +45,7 @@ public class Leaderboard : MonoBehaviour
 
     public void Submit()
     {
+        _submitting.SetActive(true);
         if (_usernameInput.text == "")
             return;
         LeaderboardCreator.UploadNewEntry(_leaderboardPublicKey, _usernameInput.text.ToUpper(), _scoreManager.Score, (success) => {
@@ -59,6 +60,7 @@ public class Leaderboard : MonoBehaviour
 
     public void OnUploadComplete(bool success)
     {
+        _submitting.SetActive(false);
         if (success)
         {
             Load();
