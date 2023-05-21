@@ -20,12 +20,12 @@ public class CharacterClick : MonoBehaviour, IPointerClickHandler
 
     private void OnMouseEnter()
     {
-        transform.DOMoveY(_hoverY, _moveTime);
+        //transform.DOMoveY(_hoverY, _moveTime);
     }
 
     private void OnMouseExit()
     {
-        transform.DOMoveY(_startingY, _moveTime);
+        //transform.DOMoveY(_startingY, _moveTime);
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -33,10 +33,7 @@ public class CharacterClick : MonoBehaviour, IPointerClickHandler
         if (_character != null)
         {
             var clip = _clips.Rand();
-            transform.DOShakePosition(clip.length, _shakeIntensity).OnComplete(() =>
-            {
-                transform.DOMoveY(_startingY, _moveTime);
-            });
+            transform.DOShakePosition(clip.length, _shakeIntensity);
             AudioManager.PlayVoiceLine(clip);
         }
         _characterSelect.SetCharacter(_character);

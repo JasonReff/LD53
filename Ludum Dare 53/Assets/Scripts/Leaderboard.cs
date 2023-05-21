@@ -46,13 +46,20 @@ public class Leaderboard : MonoBehaviour
     public void Submit()
     {
         _submitting.SetActive(true);
+        _input.SetActive(false);
         if (_usernameInput.text == "")
             return;
         LeaderboardCreator.UploadNewEntry(_leaderboardPublicKey, _usernameInput.text.ToUpper(), _scoreManager.Score, (success) => {
             if (success)
             {
-                _input.SetActive(false);
+                _submitting.SetActive(false);
+                
                 Load();
+            }
+            else
+            {
+                _submitting.SetActive(false);
+                _input.SetActive(true);
             }
         });
         
