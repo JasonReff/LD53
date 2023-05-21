@@ -53,6 +53,16 @@ public class TimerManager : MonoBehaviour
     public void LoseTime(float seconds)
     {
         _timer -= seconds;
+        StartCoroutine(RedCoroutine());
+
+        IEnumerator RedCoroutine()
+        {
+            _timeGainedTextbox.color = Color.red;
+            _timeGainedTextbox.text = $"-{seconds}";
+            _timeGainedTextbox.enabled = true;
+            yield return new WaitForSeconds(1);
+            _timeGainedTextbox.enabled = false;
+        }
     }
 
     public void AddTime(float seconds)
@@ -63,6 +73,7 @@ public class TimerManager : MonoBehaviour
 
         IEnumerator GreenCoroutine()
         {
+            _timeGainedTextbox.color = Color.green;
             _timeGainedTextbox.text = $"+{seconds}";
             _timeGainedTextbox.enabled = true;
             yield return new WaitForSeconds(1);

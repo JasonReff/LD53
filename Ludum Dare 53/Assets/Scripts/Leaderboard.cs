@@ -44,12 +44,14 @@ public class Leaderboard : MonoBehaviour
 
     public void Submit()
     {
-            LeaderboardCreator.UploadNewEntry(_leaderboardPublicKey, _usernameInput.text, _scoreManager.Score, (success) => {
-                if (success)
-                {
-                    Load();
-                }
-            });
+        if (_usernameInput.text == "")
+            return;
+        LeaderboardCreator.UploadNewEntry(_leaderboardPublicKey, _usernameInput.text, _scoreManager.Score, (success) => {
+            if (success)
+            {
+                Load();
+            }
+        });
         
     }
 
