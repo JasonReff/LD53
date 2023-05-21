@@ -3051,6 +3051,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4216989778122284095, guid: 20dd22cf577d8d047b90a337c03d18a2, type: 3}
+      propertyPath: _scoreManager
+      value: 
+      objectReference: {fileID: 1925515848}
+    - target: {fileID: 4216989778122284095, guid: 20dd22cf577d8d047b90a337c03d18a2, type: 3}
       propertyPath: _leaderboardPublicKey
       value: 6213ec56e8a60c0e340b530085bb10675ef29e1f475485db02215cfcbd4f2012
       objectReference: {fileID: 0}
