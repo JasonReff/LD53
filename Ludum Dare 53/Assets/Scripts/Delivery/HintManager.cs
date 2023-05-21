@@ -22,9 +22,11 @@ public class HintManager : MonoBehaviour
     private float _timer = 0f, _hurryTime = 0f;
     private List<Quality> _hintsGiven = new List<Quality>();
     private Qualities _packageQualities;
+    private DeliveryZone _zone;
 
     private void Start()
     {
+        _zone = GetComponent<DeliveryZone>();
         GetCharacter();
     }
 
@@ -132,6 +134,7 @@ public class HintManager : MonoBehaviour
 
     public virtual void MoveCharacterUp()
     {
+        _zone.enabled = true;
         _timer = _hintTimer - 2f;
         _hurryTime = 0f;
         _isReady = true;
@@ -141,6 +144,7 @@ public class HintManager : MonoBehaviour
 
     public void MoveCharacterDown()
     {
+        
         _hintTextbox.text = "";
         _textbox.SetActive(false);
         _hintGiver.DOLocalMoveY(_characterDown, _characterBob);
@@ -184,6 +188,7 @@ public class HintManager : MonoBehaviour
 
     public IEnumerator CorrectDelivery()
     {
+        _zone.enabled = false;
         _isReady = false;
         _hurryTime = 0f;
         _timer = 0;

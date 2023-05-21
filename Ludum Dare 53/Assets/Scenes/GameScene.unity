@@ -8846,6 +8846,10 @@ PrefabInstance:
       propertyPath: _scoreManager
       value: 
       objectReference: {fileID: 1777216956}
+    - target: {fileID: 4306173382593650112, guid: 20dd22cf577d8d047b90a337c03d18a2, type: 3}
+      propertyPath: m_text
+      value: Normal
+      objectReference: {fileID: 0}
     - target: {fileID: 8247283076899383830, guid: 20dd22cf577d8d047b90a337c03d18a2, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 43

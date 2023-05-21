@@ -43,8 +43,11 @@ public class DeliveryZone : MonoBehaviour
         {
             if (collider.TryGetComponent(out Deliverable package))
             {
-                DeliverPackage(package);
-                return;
+                if (_deliveredPackage == null)
+                {
+                    DeliverPackage(package);
+                    return;
+                }
             }
         }
     }
